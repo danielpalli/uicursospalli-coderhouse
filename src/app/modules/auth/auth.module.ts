@@ -3,18 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './pages/login/login.component';
-import { RegistroComponent } from './pages/registro/registro.component';
-
+import { RegisterComponent } from './pages/register/register.component';
+import { MainComponent } from './pages/main/main.component';
+import { MaterialModule } from 'src/app/shared/material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [
-  
-    LoginComponent,
-       RegistroComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule
-  ]
+  declarations: [LoginComponent, RegisterComponent, MainComponent],
+  imports: [CommonModule, AuthRoutingModule, MaterialModule, FlexLayoutModule],
 })
-export class AuthModule { }
+export class AuthModule {}
