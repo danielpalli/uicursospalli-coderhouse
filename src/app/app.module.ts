@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { AuthModule } from './modules/auth/auth.module';
 
 import { AppComponent } from './app.component';
-import { PaginaerrorComponent } from './shared/paginaerror/paginaerror.component';
+import { SharedModule } from './shared/shared.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    PaginaerrorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DashboardModule,
-    AuthModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
