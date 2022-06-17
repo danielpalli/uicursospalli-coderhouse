@@ -1,1 +1,32 @@
-<p>login works!</p>
+<form [formGroup]="miFormulario" autocomplete="off" (ngSubmit)="login()">
+  <span> <h1>Login</h1> </span>
+  <mat-divider></mat-divider>
+
+  <div fxLayout="column">
+    <mat-form-field appearance="fill">
+      <p>Email</p>
+      <input
+        type="email"
+        matInput
+        placeholder="Ingrese su email"
+        formControlName="email"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <p>password</p>
+      <input
+        type="password"
+        matInput
+        placeholder="Ingrese su contraseña"
+        formControlName="password"
+      />
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <button mat-raised-button type="submit" color="accent" [disabled]="!miFormulario.valid">Entrar</button>
+
+    <div>
+      <span> ¿No tienes cuenta? </span>
+      <a > Crear una aquí </a>
+    </div>
+  </div>
+</form>
