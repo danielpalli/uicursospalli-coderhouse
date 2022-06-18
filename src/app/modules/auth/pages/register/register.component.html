@@ -1,1 +1,41 @@
-<p>registro works!</p>
+<div class="contenido">
+  <h1>Registro</h1>
+  <mat-divider></mat-divider>
+
+  <form>
+     <!-- [formGroup]="loginForm" (ngSubmit)="login()"> -->
+    <mat-form-field>
+      <input matInput placeholder="Email" type="text" formControlName="email" />
+      <!-- <mat-error *ngIf="validarCampo('email')"
+        >Ingrese un mail valido</mat-error
+      > -->
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Contraseña"
+        type="password"
+        formControlName="password"
+      />
+      <!-- <mat-error *ngIf="validarCampo('password')"
+        >La contraseña tiene que tener al menos 6 caracteres</mat-error
+      > -->
+    </mat-form-field>
+
+    <div fxLayout fxLayoutAlign="center">
+      <button
+        mat-raised-button
+
+        type="submit"
+      >
+        {{ "Iniciar Sesión" | uppercase }}
+      </button>
+    </div>
+  </form>
+
+  <mat-divider></mat-divider>
+  <div class="text-content"fxLayout="column">
+    <span>¿Olvidaste tu contraseña?</span>
+    <span>¿Ya tienes una cuenta? <a routerLink="/auth/login">Inicie sesión</a></span>
+  </div>
+</div>

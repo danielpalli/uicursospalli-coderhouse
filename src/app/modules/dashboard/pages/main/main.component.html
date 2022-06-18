@@ -6,9 +6,12 @@
     <app-navbar></app-navbar>
   </div>
 
-  <div class="espacio" fxLayout="row" fxLayoutAlign="space-around start">
-    <router-outlet></router-outlet>
-    <app-sidebar></app-sidebar>
+  <div class="espacio" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start none" fxLayoutGap.xs="0px" fxLayoutGap="20px">
+    <div class="contenido" fxFlex="80">
+      <router-outlet></router-outlet>
+    </div>
+    <div fxFlex="20">
+      <app-sidebar></app-sidebar>
+    </div>
   </div>
-  <app-footer></app-footer>
 </div>

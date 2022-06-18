@@ -7,6 +7,7 @@ import { PaginaerrorComponent } from './pages/paginaerror/paginaerror.component'
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MainComponent } from './pages/main/main.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     DashboardRoutingModule,
     FlexLayoutModule,
+    MaterialModule,
     SharedModule
   ]
 })

@@ -1,32 +1,40 @@
-<form [formGroup]="miFormulario" autocomplete="off" (ngSubmit)="login()">
-  <span> <h1>Login</h1> </span>
+<div class="contenido">
+  <h1>Inicio de sesión</h1>
   <mat-divider></mat-divider>
 
-  <div fxLayout="column">
-    <mat-form-field appearance="fill">
-      <p>Email</p>
-      <input
-        type="email"
-        matInput
-        placeholder="Ingrese su email"
-        formControlName="email"
-      />
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field>
+      <input matInput placeholder="Email" type="text" formControlName="email" />
+      <mat-error *ngIf="validarCampo('email')"
+        >Ingrese un mail valido</mat-error
+      >
     </mat-form-field>
-    <mat-form-field appearance="fill">
-      <p>password</p>
+    <mat-form-field>
       <input
-        type="password"
         matInput
-        placeholder="Ingrese su contraseña"
+        placeholder="Contraseña"
+        type="password"
         formControlName="password"
       />
+      <mat-error *ngIf="validarCampo('password')"
+        >La contraseña tiene que tener al menos 6 caracteres</mat-error
+      >
     </mat-form-field>
-    <mat-divider></mat-divider>
-    <button mat-raised-button type="submit" color="accent" [disabled]="!miFormulario.valid">Entrar</button>
 
-    <div>
-      <span> ¿No tienes cuenta? </span>
-      <a > Crear una aquí </a>
+    <div fxLayout fxLayoutAlign="center">
+      <button
+        mat-raised-button
+        [style.background-color]="btnColour"
+        type="submit"
+      >
+        {{ "Iniciar Sesión" | uppercase }}
+      </button>
     </div>
+  </form>
+
+  <mat-divider></mat-divider>
+  <div class="text-content"fxLayout="column">
+    <span>¿Olvidaste tu contraseña?</span>
+    <span>¿Primera vez? <a routerLink="/auth/registro">Registrarse</a></span>
   </div>
-</form>
+</div>

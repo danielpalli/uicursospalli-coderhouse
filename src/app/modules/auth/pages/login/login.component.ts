@@ -1,25 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  miFormulario: FormGroup = this.fb.group({
-    email: ['user4@user.com', [Validators.required, Validators.email]],
-    password: ['123456', [Validators.required, Validators.minLength(6)]],
+
+  btnColour = '#a54f4f';
+
+  loginForm: FormGroup = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
   });
+
   constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {}
+
+  validarCampo(campo: string) {
+    return (
+      this.loginForm.controls[campo].errors &&
+      this.loginForm.controls[campo].touched
+    );
+  }
+
+
   login() {
-    if (
-      this.miFormulario.value.email !== '' &&
-      this.miFormulario.value.password !== ''
-    ) {
-      this.router.navigateByUrl('/inicio');
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+      return;
     }
+
+    this.router.navigateByUrl('/autogestion/inicio');
+    console.log(this.loginForm.value);
+    // this.loginForm.reset();
   }
 }

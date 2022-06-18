@@ -1,0 +1,20 @@
+
+
+mat-divider{
+  margin-left: 10px;
+}
+
+
+.contenido {
+  padding: 0px;
+  box-shadow: 0px 0px 10px #b3b3b3;
+  border-radius: 10px;
+  background-color:#7e7e7e;
+
+  a {
+    color: white;
+    &:hover {
+      color: #b3b3b3;
+    }
+  }
+}
