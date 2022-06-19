@@ -2,10 +2,66 @@
   <h1>Registro</h1>
   <mat-divider></mat-divider>
 
-  <form>
-     <!-- [formGroup]="loginForm" (ngSubmit)="login()"> -->
+  <form [formGroup]="registroForm" (ngSubmit)="registrarse()">
+    <div fxLayout="50px" fxLayoutGap="20">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nombre"
+          type="text"
+          formControlName="nombre"
+        />
+        <!-- <mat-error *ngIf="validarCampo('email')"
+          >Ingrese un mail valido</mat-error
+          > -->
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Apellido"
+          type="text"
+          formControlName="apellido"
+        />
+        <!-- <mat-error *ngIf="validarCampo('email')"
+            >Ingrese un mail valido</mat-error
+            > -->
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Dirección"
+        type="text"
+        formControlName="direccion"
+      />
+      <!-- <mat-error *ngIf="validarCampo('email')"
+        >Ingrese un mail valido</mat-error
+      > -->
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Telefono"
+        type="tel"
+        formControlName="telefono"
+      />
+      <!-- <mat-error *ngIf="validarCampo('email')"
+        >Ingrese un mail valido</mat-error
+      > -->
+    </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Email" type="text" formControlName="email" />
+      <!-- <mat-error *ngIf="validarCampo('email')"
+        >Ingrese un mail valido</mat-error
+      > -->
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Repetir email"
+        type="text"
+        formControlName="confirmarEmail"
+      />
       <!-- <mat-error *ngIf="validarCampo('email')"
         >Ingrese un mail valido</mat-error
       > -->
@@ -21,21 +77,33 @@
         >La contraseña tiene que tener al menos 6 caracteres</mat-error
       > -->
     </mat-form-field>
-
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Repetir contraseña"
+        type="password"
+        formControlName="confirmarPassword"
+      />
+      <!-- <mat-error *ngIf="validarCampo('password')"
+        >La contraseña tiene que tener al menos 6 caracteres</mat-error
+      > -->
+    </mat-form-field>
     <div fxLayout fxLayoutAlign="center">
       <button
         mat-raised-button
-
+        [style.background-color]="btnColour"
         type="submit"
       >
-        {{ "Iniciar Sesión" | uppercase }}
+        {{ "Registrarse" | uppercase }}
       </button>
     </div>
   </form>
 
   <mat-divider></mat-divider>
-  <div class="text-content"fxLayout="column">
-    <span>¿Olvidaste tu contraseña?</span>
-    <span>¿Ya tienes una cuenta? <a routerLink="/auth/login">Inicie sesión</a></span>
+  <div class="text-content" fxLayout="column">
+    <span
+      >¿Ya tienes una cuenta?
+      <a routerLink="/auth/login">Inicie sesión</a></span
+    >
   </div>
 </div>
