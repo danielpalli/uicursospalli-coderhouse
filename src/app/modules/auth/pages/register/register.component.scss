@@ -24,9 +24,8 @@ mat-form-field {
 
 button{
   margin-bottom: 10px;
-  width: 15%;
+  width: 50%;
   color:white;
-  //pantalla mediana
   @media (max-width: 800px) {
     width: 60%;
   }

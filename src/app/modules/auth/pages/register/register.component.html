@@ -11,9 +11,9 @@
           type="text"
           formControlName="nombre"
         />
-        <!-- <mat-error *ngIf="validarCampo('email')"
-          >Ingrese un mail valido</mat-error
-          > -->
+        <mat-error *ngIf="validarCampo('nombre')"
+          >El nombre es muy corto</mat-error
+          >
       </mat-form-field>
       <mat-form-field>
         <input
@@ -22,9 +22,9 @@
           type="text"
           formControlName="apellido"
         />
-        <!-- <mat-error *ngIf="validarCampo('email')"
-            >Ingrese un mail valido</mat-error
-            > -->
+        <mat-error *ngIf="validarCampo('apellido')"
+            >El apellido es muy corto</mat-error
+            >
       </mat-form-field>
     </div>
     <mat-form-field>
@@ -34,9 +34,9 @@
         type="text"
         formControlName="direccion"
       />
-      <!-- <mat-error *ngIf="validarCampo('email')"
-        >Ingrese un mail valido</mat-error
-      > -->
+      <mat-error *ngIf="validarCampo('direccion')"
+        >Ingrese una dirección valida</mat-error
+      >
     </mat-form-field>
     <mat-form-field>
       <input
@@ -45,49 +45,58 @@
         type="tel"
         formControlName="telefono"
       />
-      <!-- <mat-error *ngIf="validarCampo('email')"
-        >Ingrese un mail valido</mat-error
-      > -->
+      <mat-error *ngIf="validarCampo('email')"
+        >Ingrese un numero valido</mat-error
+        >
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Email" type="text" formControlName="email" />
-      <!-- <mat-error *ngIf="validarCampo('email')"
-        >Ingrese un mail valido</mat-error
-      > -->
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Repetir email"
-        type="text"
-        formControlName="confirmarEmail"
-      />
-      <!-- <mat-error *ngIf="validarCampo('email')"
-        >Ingrese un mail valido</mat-error
-      > -->
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Contraseña"
-        type="password"
-        formControlName="password"
-      />
-      <!-- <mat-error *ngIf="validarCampo('password')"
+    <div fxLayout="50px" fxLayoutGap="20">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Email"
+          type="text"
+          formControlName="email"
+        />
+        <mat-error *ngIf="validarCampo('email')"
+          >Ingrese un mail valido</mat-error
+      >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Repetir email"
+          type="text"
+          formControlName="confirmarEmail"
+        />
+        <!-- <mat-error *ngIf="validarCampo('email')"
+          >Ingrese un mail valido</mat-error
+          > -->
+      </mat-form-field>
+    </div>
+    <div fxLayout="50px" fxLayoutGap="20">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Contraseña"
+          type="password"
+          formControlName="password"
+        />
+        <mat-error *ngIf="validarCampo('password')"
         >La contraseña tiene que tener al menos 6 caracteres</mat-error
-      > -->
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Repetir contraseña"
-        type="password"
-        formControlName="confirmarPassword"
-      />
-      <!-- <mat-error *ngIf="validarCampo('password')"
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Repetir contraseña"
+          type="password"
+          formControlName="confirmarPassword"
+        />
+        <!-- <mat-error *ngIf="validarCampo('password')"
         >La contraseña tiene que tener al menos 6 caracteres</mat-error
-      > -->
-    </mat-form-field>
+        > -->
+      </mat-form-field>
+    </div>
     <div fxLayout fxLayoutAlign="center">
       <button
         mat-raised-button

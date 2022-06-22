@@ -36,6 +36,5 @@ export class LoginComponent implements OnInit {
 
     this.router.navigateByUrl('/autogestion/inicio');
     console.log(this.loginForm.value);
-    // this.loginForm.reset();
   }
 }
