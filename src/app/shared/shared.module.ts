@@ -6,6 +6,8 @@ import { MaterialModule } from './material/material.module';
 import { FlexModule } from '@angular/flex-layout';
 import { ErrorMsgDirective } from './directives/error-msg.directive';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { NombreYApellidoPipe } from './pipes/nombre-yapellido.pipe';
+import { AgrandarLetraDirective } from './directives/agrandar-letra.directive';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     HeaderComponent,
     ErrorMsgDirective,
     ImagenPipe,
+    NombreYApellidoPipe,
+    AgrandarLetraDirective,
   ],
   exports: [
     NavbarComponent,
