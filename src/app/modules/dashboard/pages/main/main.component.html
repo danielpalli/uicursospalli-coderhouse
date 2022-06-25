@@ -1,17 +1,14 @@
-<div class="container">
-  <div class="espacio">
-    <app-header></app-header>
-  </div>
-  <div class="menu">
-    <app-navbar></app-navbar>
-  </div>
+<!-- <div class="container mx-auto">
+  <div class="espacio"> -->
+<app-header></app-header>
 
-  <div class="espacio" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start none" fxLayoutGap.xs="0px" fxLayoutGap="20px">
-    <div class="contenido" fxFlex="80">
-      <router-outlet></router-outlet>
-    </div>
-    <div fxFlex="20">
-      <app-sidebar></app-sidebar>
-    </div>
+<app-navbar></app-navbar>
+
+<div class="px-5 pt-3 flex">
+  <div class="w-5/6 pr-5">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="w-1/6">
+    <app-sidebar></app-sidebar>
   </div>
 </div>

@@ -8,6 +8,7 @@ import { ErrorMsgDirective } from './directives/error-msg.directive';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { NombreYApellidoPipe } from './pipes/nombre-yapellido.pipe';
 import { AgrandarLetraDirective } from './directives/agrandar-letra.directive';
+import { DashboardRoutingModule } from '../modules/dashboard/dashboard-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,7 @@ import { AgrandarLetraDirective } from './directives/agrandar-letra.directive';
     NombreYApellidoPipe,
     AgrandarLetraDirective,
   ],
-  exports: [
-    NavbarComponent,
-    SidebarComponent,
-    HeaderComponent,
-  ],
-  imports: [MaterialModule, FlexModule],
+  exports: [NavbarComponent, SidebarComponent, HeaderComponent],
+  imports: [MaterialModule, FlexModule, DashboardRoutingModule],
 })
 export class SharedModule {}

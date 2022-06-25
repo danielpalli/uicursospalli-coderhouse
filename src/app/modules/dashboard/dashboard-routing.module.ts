@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AlumnosComponent } from './pages/alumnos/alumnos.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
 import { HomeComponent } from './pages/home/home.component';
+import { InscripcionComponent } from './pages/inscripcion/inscripcion.component';
 import { MainComponent } from './pages/main/main.component';
 import { PaginaerrorComponent } from './pages/paginaerror/paginaerror.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 const routes: Routes = [
   {
@@ -12,6 +16,22 @@ const routes: Routes = [
       {
         path: 'inicio',
         component: HomeComponent,
+      },
+      {
+        path: 'inscripcion',
+        component: InscripcionComponent,
+      },
+      {
+        path: 'alumnos',
+        component: AlumnosComponent,
+      },
+      {
+        path: 'cursos',
+        component: CursosComponent,
+      },
+      {
+        path: 'usuarios',
+        component: UsuariosComponent,
       },
       {
         path: '404',
