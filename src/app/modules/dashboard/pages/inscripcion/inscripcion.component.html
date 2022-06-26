@@ -1,26 +1,34 @@
-<h1 class="max-w-max">Formuario de inscripcion a materias
-
-
-</h1>
+<h1 class="max-w-max mt-3">Formuario de inscripcion a materias</h1>
 <mat-divider></mat-divider>
 
-<app-abm-de-alumnos></app-abm-de-alumnos>
+<div class="flex">
+  <div class="w-2/5 mr-3">
+    <app-abm-de-alumnos></app-abm-de-alumnos>
+  </div>
 
-<h3>Resultados de la Preinscripción</h3>
-<ul>
-  <li>
-    Si tu Inscripción fue ACEPTADA podrás ver la alternativa correspondiente con
-    sus horarios.
-  </li>
-  <li>
-    Si tu Inscripción fue RECHAZADA podrás ver las preinscripciones de cada
-    alternativa que causaron el rechazo. Para volver a inscribirte debes seguir
-    el procedimiento publicado en NOTICIAS.
-  </li>
-  <li>
-    Para que una alternativa este aceptada debe estar en Verde y todas las
-    materias ACEPTADAS
-  </li>
-</ul>
-
+  <div class="w-3/5">
+    <div class="mt-4">
+      <h3>Información de la Preinscripción</h3>
+    </div>
+    <mat-divider></mat-divider>
+    <ul class="mt-2">
+      <li>
+        Si tu Inscripción fue
+        <span class="text-green-600">ACEPTADA</span> podrás ver la alternativa
+        correspondiente con sus horarios.
+      </li>
+      <li>
+        Si tu Inscripción fue
+        <span class="text-red-600">RECHAZADA</span> podrás ver las
+        preinscripciones de cada alternativa que causaron el rechazo. Para
+        volver a inscribirte debes seguir el procedimiento publicado en
+        <span class="text-gray-600">NOTICIAS</span>.
+      </li>
+      <li>
+        Para que una alternativa este aceptada debe estar en Verde y todas las
+        materias <span class="text-green-600">ACEPTADAS</span>
+      </li>
+    </ul>
+  </div>
+</div>
 <h3>Resultado</h3>
