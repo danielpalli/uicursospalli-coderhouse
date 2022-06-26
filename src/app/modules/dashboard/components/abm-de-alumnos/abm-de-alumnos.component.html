@@ -1,6 +1,48 @@
-<form class="bg-white shadow-xl rounded-lg py-3 mx-1 mt-3"
-  action=""
+<form
+  [formGroup]="inscripcionForm"
+  class="py-6 bg-white shadow-xl rounded-lg mx-1 mt-3 px-5"
+  (ngSubmit)="preInscripcion($event)"
 >
+  <h3 class="-mb-3" >Seleccione una materia y su horario</h3>
 
-  <button>asd</button>
+  <div class="flex">
+    <div class="w-1/2">
+      <label for="materias" class="mr-1" for="materias">Materia:</label>
+      <select
+        id="materias"
+        class="border-2 rounded-md shadow-md"
+        Name="materias"
+        Size="Number_of_options"
+      >
+        <option>--</option>
+        <option>List item 1</option>
+        <option>List item 2</option>
+        <option>List item N</option>
+      </select>
+    </div>
+    <div class="w-2/3">
+      <label for="horarios" class="mr-1" for="horarios"
+        >Horarios disponibles:</label
+      >
+      <select
+        id="horarios"
+        class="border-2 rounded-md shadow-md"
+        Name="horarios"
+        Size="Number_of_options"
+      >
+        <option>--</option>
+        <option>List item 1</option>
+        <option>List item 2</option>
+        <option>List item N</option>
+      </select>
+    </div>
+  </div>
+  <div class="text-center">
+    <button
+      class="mt-5 -mb-4 text-slate-200 bg-red-500 uppercase text-lg font-bold rounded-md w-48 hover:text-white hover:bg-red-800"
+      type="submit"
+    >
+      Inscribirse
+    </button>
+  </div>
 </form>
