@@ -5,8 +5,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   exports: [
@@ -16,7 +17,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatDividerModule,
     MatListModule,
     MatInputModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatTableModule,
   ],
   declarations: [],
   imports: [CommonModule],

@@ -1,39 +1,29 @@
 <form
   [formGroup]="inscripcionForm"
   class="py-6 bg-white shadow-xl rounded-lg mx-1 mt-3 px-5"
-  (ngSubmit)="preInscripcion($event)"
+  (ngSubmit)="agregar()"
 >
-  <h3 class="-mb-3" >Seleccione una materia y su horario</h3>
+  <h3 class="-mb-3">Seleccione una materia y su horario</h3>
 
   <div class="flex">
     <div class="w-1/2">
-      <label for="materias" class="mr-1" for="materias">Materia:</label>
-      <select
-        id="materias"
-        class="border-2 rounded-md shadow-md"
-        Name="materias"
-        Size="Number_of_options"
-      >
-        <option>--</option>
-        <option>List item 1</option>
-        <option>List item 2</option>
-        <option>List item N</option>
+      <label class="mr-1">Materia:</label>
+      <select class="border-2 rounded-md shadow-md" formControlName="materia">
+        <option value="">Materia</option>
+        <option *ngFor="let materia of materias" [value]="materia | lowercase">
+          {{ materia }}
+        </option>
       </select>
     </div>
-    <div class="w-2/3">
+    <div class="w-1/2">
       <label for="horarios" class="mr-1" for="horarios"
         >Horarios disponibles:</label
       >
-      <select
-        id="horarios"
-        class="border-2 rounded-md shadow-md"
-        Name="horarios"
-        Size="Number_of_options"
-      >
-        <option>--</option>
-        <option>List item 1</option>
-        <option>List item 2</option>
-        <option>List item N</option>
+      <select class="border-2 rounded-md shadow-md" formControlName="horarios">
+        <option value="">Horario</option>
+        <option *ngFor="let horario of horarios" [value]="horario | lowercase">
+          {{ horario }}
+        </option>
       </select>
     </div>
   </div>
@@ -42,7 +32,14 @@
       class="mt-5 -mb-4 text-slate-200 bg-red-500 uppercase text-lg font-bold rounded-md w-48 hover:text-white hover:bg-red-800"
       type="submit"
     >
-      Inscribirse
+      Agregar
     </button>
   </div>
 </form>
+
+<h1>Materias a Inscribir:</h1>
+<ul>
+  <li *ngFor="let materiaAgregar of materiasAgregadas">
+    {{ materiaAgregar }}
+  </li>
+</ul>

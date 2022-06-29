@@ -35,7 +35,8 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
     FlexLayoutModule,
     MaterialModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ]
 })
 export class DashboardModule { }

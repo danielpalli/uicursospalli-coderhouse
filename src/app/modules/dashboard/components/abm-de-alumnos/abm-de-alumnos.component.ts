@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-abm-de-alumnos',
@@ -8,15 +9,30 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AbmDeAlumnosComponent implements OnInit {
   btnColour = '#a54f4f';
+
   inscripcionForm: FormGroup = this.fb.group({
-
+    materia: ['', [Validators.required]],
+    horarios: ['', [Validators.required]],
   });
-  constructor(private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
+  materias: string[] = [];
+  horarios: string[] = [];
 
-  preInscripcion(e: Event) {
+  materiasAgregadas: string[] = [];
 
-    console.log("hola");
+  constructor(private fb: FormBuilder, private dashboardService:DashboardService) {}
+
+  ngOnInit(): void {
+    this.materias = this.dashboardService.materias;
+    this.horarios = this.dashboardService.horarios;
+  }
+
+  agregar() {
+    if (this.inscripcionForm.valid) {
+      this.materiasAgregadas.push(this.inscripcionForm.value.materia);
+      this.inscripcionForm.reset();
+    }
+
+    console.log(this.materiasAgregadas);
   }
 }

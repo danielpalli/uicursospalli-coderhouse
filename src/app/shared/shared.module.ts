@@ -20,7 +20,12 @@ import { DashboardRoutingModule } from '../modules/dashboard/dashboard-routing.m
     NombreYApellidoPipe,
     AgrandarLetraDirective,
   ],
-  exports: [NavbarComponent, SidebarComponent, HeaderComponent],
+  exports: [
+    NavbarComponent,
+    SidebarComponent,
+    HeaderComponent,
+    AgrandarLetraDirective,
+  ],
   imports: [MaterialModule, FlexModule, DashboardRoutingModule],
 })
 export class SharedModule {}

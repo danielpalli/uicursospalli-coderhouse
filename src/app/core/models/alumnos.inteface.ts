@@ -1,4 +1,4 @@
-export default interface Usuario {
+export default interface Alumnos {
   nombre: string;
   apellido: string;
   direccion: string;

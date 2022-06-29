@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Usuario from 'src/app/core/models/usuarios.interface';
+import Alumno from 'src/app/core/models/alumnos.inteface';
+import alumnos from '../../../../data/alumnos.json';
 
 @Component({
   selector: 'app-lista-de-alumnos',
@@ -7,20 +8,20 @@ import Usuario from 'src/app/core/models/usuarios.interface';
   styleUrls: ['./lista-de-alumnos.component.scss'],
 })
 export class ListaDeAlumnosComponent implements OnInit {
-  showImage!: boolean;
-  data: Usuario[] = [
-    {
-      nombre: 'Juan',
-      apellido: 'Perez',
-      direccion: 'Una dire 123',
-      telefono: '123456789',
-      perfil: 'alumno', //puede ser desarrollador, it, usuario final
-      sexo: 'masculino',
-      email: 'test1@test.com',
-    },
-  ];
+  alumno: Alumno[] =  alumnos;
 
-  columnsToDisplay = ['name', 'apellido', 'direccion','telefono', 'perfil', 'sexo', 'email'];
+  displayedColumns: string[] = [
+    'id',
+    'nombre',
+    'apellido',
+    'direccion',
+    'telefono',
+    'perfil',
+    'sexo',
+    'email',
+  ];
+  dataSource = this.alumno;
+
   constructor() {}
 
   ngOnInit(): void {}
