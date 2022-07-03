@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -14,5 +15,5 @@ export class DashboardService {
   get materias():string []{
     return[...this._materias];
   }
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }

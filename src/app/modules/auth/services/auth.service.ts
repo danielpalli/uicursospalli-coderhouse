@@ -19,6 +19,18 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  obternerUsuarios(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(`${this.baseUrl}/usuarios`).pipe(
+      map((usuarios) => {
+        return Object.values(usuarios);
+      }),
+      catchError((error) => {
+        console.error(error);
+        return of([]);
+      })
+    );
+  }
+
   registro(
     nombre: string,
     apellido: string,
@@ -102,4 +114,6 @@ export class AuthService {
   logout() {
     localStorage.clear();
   }
+
+
 }

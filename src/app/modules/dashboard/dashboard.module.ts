@@ -9,20 +9,21 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MainComponent } from './pages/main/main.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from 'src/app/shared/material/material.module';
-import { AbmDeAlumnosComponent } from './components/abm-de-alumnos/abm-de-alumnos.component';
-import { ListaDeAlumnosComponent } from './components/lista-de-alumnos/lista-de-alumnos.component';
+import { FormularioInscripcion } from './components/formulario-inscripcion/formulario-inscripcion.component';
+import { Listado } from './components/listado/listado.component';
 import { InscripcionComponent } from './pages/inscripcion/inscripcion.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     HomeComponent,
     PaginaerrorComponent,
     MainComponent,
-    AbmDeAlumnosComponent,
-    ListaDeAlumnosComponent,
+    FormularioInscripcion,
+    Listado,
     InscripcionComponent,
     AlumnosComponent,
     CursosComponent,
@@ -35,6 +36,7 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
     MaterialModule,
     SharedModule,
     ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class DashboardModule { }

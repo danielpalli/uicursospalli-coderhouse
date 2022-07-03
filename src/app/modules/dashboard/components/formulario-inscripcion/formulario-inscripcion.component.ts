@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
-  selector: 'app-abm-de-alumnos',
-  templateUrl: './abm-de-alumnos.component.html',
-  styleUrls: ['./abm-de-alumnos.component.scss'],
+  selector: 'app-formulario-inscripcion',
+  templateUrl: './formulario-inscripcion.component.html',
+  styleUrls: ['./formulario-inscripcion.component.scss'],
 })
-export class AbmDeAlumnosComponent implements OnInit {
+export class FormularioInscripcion implements OnInit {
   btnColour = '#a54f4f';
 
   inscripcionForm: FormGroup = this.fb.group({
