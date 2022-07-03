@@ -1,6 +1,6 @@
 <div class="flex p-5 bg-slate-50">
   <div class="w-1/8 pr-5">
-    <a class="" routerLink="/autogestion/inicio">
+    <a routerLink="/autogestion/inicio">
       <img src="../../../../assets/images/logo.png" width="100px" alt="" />
     </a>
   </div>
@@ -13,6 +13,8 @@
     <br />
 
     <span>Perfil: <b>{{ usuario.perfil }}</b></span>
+    <br>
+    <button (click)="logout()">Cerrar sesion</button>
   </div>
 </div>
 
