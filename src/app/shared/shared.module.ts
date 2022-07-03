@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -26,6 +27,6 @@ import { DashboardRoutingModule } from '../modules/dashboard/dashboard-routing.m
     HeaderComponent,
     AgrandarLetraDirective,
   ],
-  imports: [MaterialModule, FlexModule, DashboardRoutingModule],
+  imports: [MaterialModule, FlexModule, DashboardRoutingModule, CommonModule ],
 })
 export class SharedModule {}

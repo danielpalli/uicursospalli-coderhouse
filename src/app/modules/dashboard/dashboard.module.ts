@@ -16,7 +16,6 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
-
 @NgModule({
   declarations: [
     HomeComponent,
@@ -36,7 +35,6 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
     MaterialModule,
     SharedModule,
     ReactiveFormsModule,
-
   ]
 })
 export class DashboardModule { }

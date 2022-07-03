@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Alumno from 'src/app/core/models/alumnos.inteface';
+import Alumno from 'src/app/core/interfaces/alumnos.inteface';
 import alumnos from '../../../../data/alumnos.json';
 
 @Component({
