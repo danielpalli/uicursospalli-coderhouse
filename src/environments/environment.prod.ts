@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://admincursos.herokuapp.com/api'
+  baseUrl: 'https://adminback-palli.vercel.app/api'
 };
