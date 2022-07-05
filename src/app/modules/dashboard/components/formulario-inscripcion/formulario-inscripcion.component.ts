@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DashboardService } from '../../services/dashboard.service';
 
@@ -7,7 +7,7 @@ import { DashboardService } from '../../services/dashboard.service';
   templateUrl: './formulario-inscripcion.component.html',
   styleUrls: ['./formulario-inscripcion.component.scss'],
 })
-export class FormularioInscripcion implements OnInit {
+export class FormularioInscripcion implements OnInit, OnDestroy {
   btnColour = '#a54f4f';
 
   inscripcionForm: FormGroup = this.fb.group({
@@ -21,6 +21,10 @@ export class FormularioInscripcion implements OnInit {
   materiasAgregadas: string[] = [];
 
   constructor(private fb: FormBuilder, private dashboardService:DashboardService) {}
+
+  ngOnDestroy(): void {
+    this.materiasAgregadas = [];
+  }
 
   ngOnInit(): void {
     this.materias = this.dashboardService.materias;

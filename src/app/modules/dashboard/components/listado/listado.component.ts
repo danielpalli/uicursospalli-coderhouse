@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 // import Alumno from 'src/app/core/interfaces/alumnos.inteface';
 import Usuario from 'src/app/core/interfaces/usuarios.interface';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
@@ -9,8 +11,8 @@ import { AuthService } from 'src/app/modules/auth/services/auth.service';
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.scss'],
 })
-export class Listado implements OnInit {
-  usuario: Usuario[] = [];
+export class Listado implements OnInit, OnDestroy {
+  usuario!: Usuario[];
 
   displayedColumns: string[] = [
     'id',
@@ -25,10 +27,14 @@ export class Listado implements OnInit {
 
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    this.authService.obternerUsuarios().subscribe((usuarios: any) => {
-      this.usuario = usuarios[1];
+  ngOnDestroy(): void {
+    this.usuario = [];
+  }
 
+  ngOnInit(): void {
+    this.authService.obternerUsuarios().subscribe((usuarios: Usuario[]) => {
+      usuarios = Object.values(usuarios[1]);
+      this.usuario = usuarios;
     });
   }
 }
