@@ -18,12 +18,10 @@ export class FormularioInscripcion implements OnInit, OnDestroy {
   materias: string[] = [];
   horarios: string[] = [];
 
-  materiasAgregadas: string[] = [];
 
   constructor(private fb: FormBuilder, private dashboardService:DashboardService) {}
 
   ngOnDestroy(): void {
-    this.materiasAgregadas = [];
   }
 
   ngOnInit(): void {
@@ -33,10 +31,8 @@ export class FormularioInscripcion implements OnInit, OnDestroy {
 
   agregar() {
     if (this.inscripcionForm.valid) {
-      this.materiasAgregadas.push(this.inscripcionForm.value.materia);
       this.inscripcionForm.reset();
     }
 
-    console.log(this.materiasAgregadas);
   }
 }

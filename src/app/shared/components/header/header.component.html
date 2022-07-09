@@ -1,17 +1,18 @@
 <div class="flex p-5 bg-slate-50">
-  <div class="w-1/8 pr-5">
+  <div>
     <a routerLink="/autogestion/inicio">
-      <img src="../../../../assets/images/logo.png" width="100px" alt="" />
+      <img class="my-7"  src="../../../../assets/images/logo.png" width="100px" alt="" />
     </a>
   </div>
   <div class="w-full text-center">
     <h1>CoderHouse</h1>
   </div>
-  <div class="w-1/6 space-x-4 space-x-reverse">
-    <span>{{ usuario.apellido }}, {{ usuario.nombre  }} {{ time | async }}</span>
+  <div class="w-auto space-x-4 space-x-reverse">
+    <span>{{ usuario.apellido }}, {{ usuario.nombre }}</span>
     <br />
-
     <span>Perfil: <b>{{ usuario.perfil }}</b></span>
+    <br>
+    <span>{{ time | async }}</span>
     <br>
     <button (click)="logout()">Cerrar sesion</button>
   </div>

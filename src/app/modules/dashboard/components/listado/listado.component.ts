@@ -1,16 +1,14 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-// import Alumno from 'src/app/core/interfaces/alumnos.inteface';
 import Usuario from 'src/app/core/interfaces/usuarios.interface';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
-// import alumnos from '../../../../data/alumnos.json';
+
 
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.scss'],
 })
+
 export class Listado implements OnInit, OnDestroy {
   usuario!: Usuario[];
 

@@ -1,14 +1,17 @@
-<app-header></app-header>
-<div class="bg-gray-400 ">
 
+<div class="sm:hidden">
+  <app-header></app-header>
+</div>
+
+<div class="bg-gray-400">
   <app-navbar></app-navbar>
 </div>
 
-<div class="px-5 pt-3 flex">
-  <div class="w-5/6 pr-5">
+<div class="flex sm:flex-col px-5 mx-auto ">
+  <div class="w-11/12 sm:w-full">
     <router-outlet></router-outlet>
   </div>
-  <div class="w-1/6">
+  <div class="sm:hidden">
     <app-sidebar></app-sidebar>
   </div>
 </div>
