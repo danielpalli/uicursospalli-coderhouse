@@ -1,5 +1,8 @@
 <div class="flex flex-wrap px-16">
-  <div *ngFor="let materia of preInscripcion" class="w-48 bg-white shadow-xl rounded-lg mx-2 mb-3">
+  <div
+    *ngFor="let materia of preInscripcion"
+    class="w-48 bg-white shadow-xl rounded-lg mx-2 mb-3"
+  >
     <mat-card class="">
       <mat-card-subtitle>{{ materia.materia }}</mat-card-subtitle>
       <div class="-mt-2 mb-5">
@@ -10,9 +13,14 @@
       </mat-card-content>
       <mat-card-actions align="end">
         <div class="-mt-8">
-          <button mat-mini-fab color="warn">X</button>
+          <button mat-mini-fab color="warn" (click)="quitar(materia.materia)">
+            X
+          </button>
         </div>
       </mat-card-actions>
     </mat-card>
   </div>
 </div>
+
+<button mat-raised-button color="warn">Inscribir</button>
+<button mat-raised-button color="warn">Borrar todo</button>

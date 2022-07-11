@@ -53,6 +53,7 @@ export class FormularioInscripcion implements OnInit, OnDestroy {
   }
 
   agregar() {
+
     if (this.inscripcionForm.valid) {
       if (
         this.preInscripcion.find(
@@ -61,7 +62,7 @@ export class FormularioInscripcion implements OnInit, OnDestroy {
       ) {
         return;
       }
-      this.preInscripcion.push(this.inscripcionForm.value);
+
       this.dashboardService.agregarMateria(this.inscripcionForm.value);
       this.inscripcionForm.get('materia')?.setValue('');
       this.inscripcionForm.get('horarios')?.setValue('');

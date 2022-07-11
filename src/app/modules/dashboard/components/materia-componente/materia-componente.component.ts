@@ -12,8 +12,12 @@ export class MateriaComponenteComponent implements OnInit {
   constructor(private dashboardService: DashboardService) {}
 
   ngOnInit(): void {
-
     this.preInscripcion = this.dashboardService.obtenerPreinscripcion() || [];
-    console.log(this.preInscripcion);
+
+  }
+
+  quitar(materia: string) {
+    this.dashboardService.quitarMateria(materia);
+    this.preInscripcion = this.dashboardService.obtenerPreinscripcion() || [];
   }
 }
