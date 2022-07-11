@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import Materia from 'src/app/core/interfaces/materias.interface';
 import { environment } from 'src/environments/environment';
 
@@ -11,6 +11,16 @@ import { environment } from 'src/environments/environment';
 export class DashboardService {
   private baseUrl: string = environment.baseUrl;
   private _materia!:  Materia;
+  private  _preInscripcion: any[] = [];
+
+  agregarMateria(materia: any) {
+    this._preInscripcion.push(materia);
+    console.log(this._preInscripcion);
+  }
+
+  obtenerPreinscripcion(): any[] {
+    return this._preInscripcion;
+  }
 
   get materia(): Materia {
     return { ...this._materia };
@@ -31,7 +41,6 @@ export class DashboardService {
   obtenerHorarioMateria(materia:String){
     return this.http.get<Materia[]>(`${this.baseUrl}/materias/${materia}`).pipe(
       map((materia) => {
-        console.log(materia);
         return Object.values(materia);
       }
       ),

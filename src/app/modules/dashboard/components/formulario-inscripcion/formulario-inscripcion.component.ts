@@ -24,6 +24,8 @@ export class FormularioInscripcion implements OnInit, OnDestroy {
 
   materia!: Materia[];
   horario!: string[];
+  preInscripcion!: any[];
+
   constructor(
     private fb: FormBuilder,
     private dashboardService: DashboardService
@@ -34,7 +36,7 @@ export class FormularioInscripcion implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.dashboardService.obtenerMaterias().subscribe((materias: Materia[]) => {
       materias = Object.values(materias[1]);
-      this.materia = materias;
+      this.materia = materias || [];
     });
 
     this.inscripcionForm
@@ -46,11 +48,23 @@ export class FormularioInscripcion implements OnInit, OnDestroy {
             this.horario = materia[1].horario;
           });
       });
+
+    this.preInscripcion = [];
   }
 
   agregar() {
     if (this.inscripcionForm.valid) {
-      this.inscripcionForm.reset();
+      if (
+        this.preInscripcion.find(
+          (item) => item.materia === this.inscripcionForm.value.materia
+        )
+      ) {
+        return;
+      }
+      this.preInscripcion.push(this.inscripcionForm.value);
+      this.dashboardService.agregarMateria(this.inscripcionForm.value);
+      this.inscripcionForm.get('materia')?.setValue('');
+      this.inscripcionForm.get('horarios')?.setValue('');
     }
   }
 }
