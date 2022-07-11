@@ -27,6 +27,9 @@ export class DashboardService {
   obtenerPreinscripcion(): any[] {
     return this._preInscripcion;
   }
+  borrarTodo() {
+    this._preInscripcion = [];
+  }
 
   get materia(): Materia {
     return { ...this._materia };

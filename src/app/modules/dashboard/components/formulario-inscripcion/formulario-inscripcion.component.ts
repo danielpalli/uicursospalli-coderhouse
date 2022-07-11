@@ -14,7 +14,7 @@ import { DashboardService } from '../../services/dashboard.service';
   templateUrl: './formulario-inscripcion.component.html',
   styleUrls: ['./formulario-inscripcion.component.scss'],
 })
-export class FormularioInscripcion implements OnInit, OnDestroy {
+export class FormularioInscripcion implements OnInit {
   btnColour = '#a54f4f';
 
   inscripcionForm: FormGroup = this.fb.group({
@@ -30,8 +30,6 @@ export class FormularioInscripcion implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private dashboardService: DashboardService
   ) {}
-
-  ngOnDestroy(): void {}
 
   ngOnInit(): void {
     this.dashboardService.obtenerMaterias().subscribe((materias: Materia[]) => {
