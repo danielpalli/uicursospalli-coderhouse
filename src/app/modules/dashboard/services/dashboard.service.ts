@@ -1,19 +1,46 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+import Materia from 'src/app/core/interfaces/materias.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
-  private _materias:string[] = ['Matemáticas', 'Física', 'Química', 'Historia', 'Lengua', 'Geografía'];
-  private _horarios:string[] = ['00:00', '08:00', '14:00'];
+  private baseUrl: string = environment.baseUrl;
+  private _materia!:  Materia;
 
-  get horarios():string[]{
-    return [...this._horarios];
+  get materia(): Materia {
+    return { ...this._materia };
   }
 
-  get materias():string []{
-    return[...this._materias];
+  obtenerMaterias(): Observable<Materia[]> {
+    return this.http.get<Materia[]>(`${this.baseUrl}/materias`).pipe(
+      map((usuarios) => {
+        return Object.values(usuarios);
+      }),
+      catchError((error) => {
+        console.error(error);
+        return of([]);
+      })
+    );
+  }
+
+  obtenerHorarioMateria(materia:String){
+    return this.http.get<Materia[]>(`${this.baseUrl}/materias/${materia}`).pipe(
+      map((materia) => {
+        console.log(materia);
+        return Object.values(materia);
+      }
+      ),
+      catchError((error) => {
+        console.error(error);
+        return of([]);
+      }
+      )
+    );
   }
   constructor(private http: HttpClient) { }
 }
