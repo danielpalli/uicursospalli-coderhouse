@@ -17,6 +17,10 @@ export class AuthService {
     return { ...this._usuario };
   }
 
+  get role() {
+    return this._usuario.perfil;
+  }
+
   constructor(private http: HttpClient) {}
 
   obtenerUsuario(): Observable<Usuario> {
@@ -115,6 +119,32 @@ export class AuthService {
           perfil: resp.perfil,
           email: resp.email,
         };
+        return resp.ok;
+      }),
+      catchError((err) => of(err.error.msg))
+    );
+  }
+
+  eliminarUsuario(usuario: Usuario) {
+    const url = `${this.baseUrl}/usuarios/${usuario._id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.delete(url, { headers })
+
+  }
+
+  actualizarUsuario(usuario: Usuario) {
+    const url = `${this.baseUrl}/usuarios/${usuario._id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.put<AuthResponse>(url, usuario, { headers }).pipe(
+      map((resp) => {
         return resp.ok;
       }),
       catchError((err) => of(err.error.msg))

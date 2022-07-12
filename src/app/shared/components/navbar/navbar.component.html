@@ -22,7 +22,7 @@
         mat-button
         >Usuarios</a
       >
-      <hr>
+      <hr />
       <app-sidebar></app-sidebar>
     </div>
   </mat-menu>
@@ -49,6 +49,7 @@
     >Alumnos</a
   >
   <a
+    *ngIf="respuesta"
     class="focus:bg-slate-500 text-white"
     routerLink="/autogestion/usuarios"
     mat-button

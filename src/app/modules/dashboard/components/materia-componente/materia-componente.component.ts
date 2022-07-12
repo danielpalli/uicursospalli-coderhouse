@@ -13,7 +13,6 @@ export class MateriaComponenteComponent implements OnInit {
 
   ngOnInit(): void {
     this.preInscripcion = this.dashboardService.obtenerPreinscripcion() || [];
-
   }
 
   quitar(materia: string) {
@@ -25,5 +24,4 @@ export class MateriaComponenteComponent implements OnInit {
     this.dashboardService.borrarTodo();
     this.preInscripcion = this.dashboardService.obtenerPreinscripcion() || [];
   }
-
 }

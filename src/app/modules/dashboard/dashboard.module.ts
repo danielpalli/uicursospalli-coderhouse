@@ -16,6 +16,7 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MateriaComponenteComponent } from './components/materia-componente/materia-componente.component';
+import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MateriaComponenteComponent } from './components/materia-componente/mate
     AlumnosComponent,
     UsuariosComponent,
     MateriaComponenteComponent,
+    EditarUsuarioComponent,
   ],
   imports: [
     CommonModule,

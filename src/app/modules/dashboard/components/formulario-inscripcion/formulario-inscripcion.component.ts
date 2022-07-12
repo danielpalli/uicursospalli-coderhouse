@@ -1,9 +1,6 @@
 import {
   Component,
-  OnChanges,
-  OnDestroy,
   OnInit,
-  SimpleChanges,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Materia from 'src/app/core/interfaces/materias.interface';

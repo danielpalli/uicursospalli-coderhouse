@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>Editar a: {{ data.nombre }}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="editarUsuarioForm" (ngSubmit)="editarUsuario()">
+    <div class="flex flex-col">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Nombre"
+          formControlName="nombre"
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Apellido"
+          formControlName="apellido"
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Dirección"
+          formControlName="direccion"
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Telefono"
+          formControlName="telefono"
+          type="tel"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Email"
+          formControlName="email"
+          type="email"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Perfil"
+          formControlName="perfil"
+          type="text"
+        />
+      </mat-form-field>
+    </div>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button type="submit" mat-button [mat-dialog-close]="true" cdkFocusInitial>Editar</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>
+

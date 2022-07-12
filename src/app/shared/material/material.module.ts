@@ -12,7 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   exports: [
     MatButtonModule,
@@ -27,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
+    MatDialogModule,
   ],
   declarations: [],
   imports: [CommonModule],

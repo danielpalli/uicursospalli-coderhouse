@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from 'src/app/core/guards/admin-guard.guard';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InscripcionComponent } from './pages/inscripcion/inscripcion.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
       {
         path: 'usuarios',
         component: UsuariosComponent,
+        canActivate: [AdminGuard],
       },
       {
         path: '404',
@@ -36,12 +38,12 @@ const routes: Routes = [
         path: '**',
         redirectTo: '404',
       },
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}
