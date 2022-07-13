@@ -1,7 +1,4 @@
-import {
-  Component,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Materia from 'src/app/core/interfaces/materias.interface';
 import { DashboardService } from '../../services/dashboard.service';
@@ -48,16 +45,7 @@ export class FormularioInscripcion implements OnInit {
   }
 
   agregar() {
-
     if (this.inscripcionForm.valid) {
-      if (
-        this.preInscripcion.find(
-          (item) => item.materia === this.inscripcionForm.value.materia
-        )
-      ) {
-        return;
-      }
-
       this.dashboardService.agregarMateria(this.inscripcionForm.value);
       this.inscripcionForm.get('materia')?.setValue('');
       this.inscripcionForm.get('horarios')?.setValue('');

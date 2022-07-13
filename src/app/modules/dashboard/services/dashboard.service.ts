@@ -14,8 +14,15 @@ export class DashboardService {
   private _preInscripcion: any[] = [];
 
   agregarMateria(materia: any) {
+    if (this._preInscripcion.find((item) => item.materia === materia.materia)) {
+      return;
+    }
+    if (this._preInscripcion.includes({ materia })) {
+      alert('Ya estas inscripto en esta materia');
+      return;
+    }
+
     this._preInscripcion.push(materia);
-    console.log(this._preInscripcion);
   }
 
   quitarMateria(materia: string) {
