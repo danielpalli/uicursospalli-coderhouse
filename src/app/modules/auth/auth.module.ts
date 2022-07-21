@@ -10,7 +10,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, MainComponent],
-  imports: [CommonModule, AuthRoutingModule, MaterialModule, FlexLayoutModule, ReactiveFormsModule],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    MainComponent,
+  ],
+  imports: [
+    CommonModule,
+    AuthRoutingModule,
+    MaterialModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+  ],
 })
 export class AuthModule {}

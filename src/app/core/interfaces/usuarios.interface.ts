@@ -7,4 +7,5 @@ export default interface Usuario {
   perfil?: string;
   sexo?: string;
   email?: string;
+  token?: string;
 }

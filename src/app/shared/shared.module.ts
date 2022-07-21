@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './material/material.module';
 import { FlexModule } from '@angular/flex-layout';
@@ -10,21 +9,22 @@ import { ImagenPipe } from './pipes/imagen.pipe';
 import { NombreYApellidoPipe } from './pipes/nombre-yapellido.pipe';
 import { AgrandarLetraDirective } from './directives/agrandar-letra.directive';
 import { DashboardRoutingModule } from '../modules/dashboard/dashboard-routing.module';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    SidebarComponent,
     HeaderComponent,
     ErrorMsgDirective,
     ImagenPipe,
     NombreYApellidoPipe,
     AgrandarLetraDirective,
+    SidenavComponent,
   ],
   exports: [
     NavbarComponent,
-    SidebarComponent,
     HeaderComponent,
+    SidenavComponent,
     AgrandarLetraDirective,
   ],
   imports: [MaterialModule, FlexModule, DashboardRoutingModule, CommonModule ],

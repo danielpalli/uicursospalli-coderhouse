@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl:'https://adminback-palli.vercel.app/api'
-  // baseUrl: 'http://localhost:4000/api'
+  // baseUrl:'https://adminback-palli.vercel.app/api'
+  baseUrl: 'http://localhost:4000/api'
 };
 
 /*

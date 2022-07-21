@@ -1,33 +1,4 @@
-<div class="mdUp:hidden">
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <div class="flex flex-col">
-      <a class="focus:bg-slate-500" routerLink="/autogestion/inicio" mat-button
-        >Inicio</a
-      >
-      <a
-        class="focus:bg-slate-500"
-        routerLink="/autogestion/inscripcion"
-        mat-button
-        >Inscripcion a materias</a
-      >
-      <a class="focus:bg-slate-500" routerLink="/autogestion/alumnos" mat-button
-        >Alumnos</a
-      >
-      <a
-        class="focus:bg-slate-500"
-        routerLink="/autogestion/usuarios"
-        mat-button
-        >Usuarios</a
-      >
-      <hr />
-      <app-sidebar></app-sidebar>
-    </div>
-  </mat-menu>
-  <button class="text-white" (click)="logout()">Cerrar sesion</button>
-</div>
+
 
 <div class="sm:hidden">
   <a
