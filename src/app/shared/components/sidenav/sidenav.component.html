@@ -1,2 +1,90 @@
+<div
+  class="bg-gray-900 h-screen py-3 relative duration-200"
+  [ngClass]="{
+    'w-14': collapsed,
+    'w-28': !collapsed
+  }"
+>
+  <span
+    (click)="toggleCollapsed()"
+    class="cursor-pointer px-4 text-md inline-flex text-white"
+    >C.U.
+  </span>
 
-sidenav
+  <div class="flex flex-col justify-center items-center">
+    <div>
+      <mat-icon
+        (click)="irAInicio()"
+        *ngIf="collapsed; else inicio"
+        class="text-white cursor-pointer"
+        fontIcon="home"
+        >home</mat-icon
+      >
+      <ng-template #inicio>
+        <a routerLink="/autogestion/inicio" class="text-white cursor-pointer"
+          >Inicio</a
+        >
+      </ng-template>
+    </div>
+    <div>
+      <mat-icon
+        (click)="irAInscripcion()"
+        *ngIf="collapsed; else inscripcion"
+        class="text-white cursor-pointer"
+        fontIcon="description"
+        >description</mat-icon
+      >
+      <ng-template #inscripcion>
+        <a
+          routerLink="/autogestion/inscripcion"
+          class="text-white cursor-pointer"
+          >Inscripcion</a
+        >
+      </ng-template>
+    </div>
+    <div>
+      <mat-icon
+        (click)="irACursos()"
+        *ngIf="collapsed; else cursos"
+        class="text-white cursor-pointer"
+        fontIcon="find_in_page"
+        >find_in_page</mat-icon
+      >
+      <ng-template #cursos>
+        <span class="text-white cursor-pointer">Cursos</span>
+      </ng-template>
+    </div>
+    <div>
+      <mat-icon
+        (click)="irAAlumnos()"
+        *ngIf="collapsed; else alumnos"
+        class="text-white cursor-pointer"
+        fontIcon="accessibility"
+        >accessibility</mat-icon
+      >
+      <ng-template #alumnos>
+        <a routerLink="/autogestion/alumnos" class="text-white cursor-pointer"
+          >Alumnos</a
+        >
+      </ng-template>
+    </div>
+
+    <div>
+      <mat-icon
+      (click)="irAUsuarios()"
+        *ngIf="collapsed && respuesta; else usuario"
+        class="text-white cursor-pointer"
+        fontIcon="assignment"
+        >assignment</mat-icon
+      >
+      <ng-template #usuario>
+        <a
+          routerLink="/autogestion/usuarios"
+          *ngIf="respuesta"
+          class="text-white cursor-pointer"
+          >Usuarios</a
+        >
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -26,29 +26,29 @@ export class FormularioInscripcion implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.dashboardService.obtenerMaterias().subscribe((materias: Materia[]) => {
-      materias = Object.values(materias[1]);
-      this.materia = materias || [];
-    });
+    // this.dashboardService.obtenerMaterias().subscribe((materias: Materia[]) => {
+    //   materias = Object.values(materias[1]);
+    //   this.materia = materias || [];
+    // });
 
-    this.inscripcionForm
-      .get('materia')
-      ?.valueChanges.subscribe((materia: string) => {
-        this.dashboardService
-          .obtenerHorarioMateria(materia)
-          .subscribe((materia: any) => {
-            this.horario = materia[1].horario;
-          });
-      });
+    // this.inscripcionForm
+    //   .get('materia')
+    //   ?.valueChanges.subscribe((materia: string) => {
+    //     this.dashboardService
+    //       .obtenerHorarioMateria(materia)
+    //       .subscribe((materia: any) => {
+    //         this.horario = materia[1].horario;
+    //       });
+    //   });
 
-    this.preInscripcion = [];
+    // this.preInscripcion = [];
   }
 
   agregar() {
-    if (this.inscripcionForm.valid) {
-      this.dashboardService.agregarMateria(this.inscripcionForm.value);
-      this.inscripcionForm.get('materia')?.setValue('');
-      this.inscripcionForm.get('horarios')?.setValue('');
-    }
+    // if (this.inscripcionForm.valid) {
+    //   this.dashboardService.agregarMateria(this.inscripcionForm.value);
+    //   this.inscripcionForm.get('materia')?.setValue('');
+    //   this.inscripcionForm.get('horarios')?.setValue('');
+    // }
   }
 }
