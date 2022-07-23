@@ -35,7 +35,9 @@
         >find_in_page</mat-icon
       >
       <ng-template #cursos>
-        <a routerLink="/autogestion/cursos" class="text-white cursor-pointer">Cursos</a>
+        <a routerLink="/autogestion/cursos" class="text-white cursor-pointer"
+          >Cursos</a
+        >
       </ng-template>
     </div>
     <div>
@@ -47,7 +49,9 @@
         >assignment</mat-icon
       >
       <ng-template #inscripcion>
-        <a routerLink="/autogestion/inscripciones" class="text-white cursor-pointer"
+        <a
+          routerLink="/autogestion/inscripciones"
+          class="text-white cursor-pointer"
           >Inscripcion</a
         >
       </ng-template>
@@ -67,6 +71,21 @@
           *ngIf="respuesta"
           class="text-white cursor-pointer"
           >Usuarios</a
+        >
+      </ng-template>
+    </div>
+
+    <div>
+      <mat-icon
+        (click)="logout()"
+        *ngIf="collapsed; else salir"
+        class="text-white cursor-pointer"
+        fontIcon="exit_to_app"
+        >exit_to_app</mat-icon
+      >
+      <ng-template #salir>
+        <span (click)="logout()" class="text-white cursor-pointer"
+          >Cerrar Sesion</span
         >
       </ng-template>
     </div>

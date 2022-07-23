@@ -34,4 +34,9 @@ export class SidenavComponent implements OnInit {
   irAUsuarios() {
     this.router.navigate(['/autogestion/usuarios']);
   }
+
+  logout() {
+    this.router.navigateByUrl('/auth/login');
+    this.authService.logout();
+  }
 }
