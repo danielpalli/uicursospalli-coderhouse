@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  selector: 'app-toolbar',
+  templateUrl: './toolbar.component.html',
+  styleUrls: ['./toolbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class ToolbarComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
   respuesta: boolean = false;
   ngOnInit(): void {

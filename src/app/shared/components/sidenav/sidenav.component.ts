@@ -21,21 +21,17 @@ export class SidenavComponent implements OnInit {
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
   }
-  irAInicio() {
-    this.router.navigate(['/autogestion/inicio']);
-  }
-  irAInscripcion() {
-    this.router.navigate(['/autogestion/inscripcion']);
-  }
-  irACursos() {
-    // this.router.navigate(['/cursos']);
-  }
+
   irAAlumnos() {
     this.router.navigate(['/autogestion/alumnos']);
+  }
+  irACursos() {
+    this.router.navigate(['/autogestion/cursos']);
+  }
+  irAInscripcion() {
+    this.router.navigate(['/autogestion/inscripciones']);
   }
   irAUsuarios() {
     this.router.navigate(['/autogestion/usuarios']);
   }
-
-
 }

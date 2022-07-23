@@ -14,31 +14,15 @@
   <div class="flex flex-col justify-center items-center">
     <div>
       <mat-icon
-        (click)="irAInicio()"
-        *ngIf="collapsed; else inicio"
+        (click)="irAAlumnos()"
+        *ngIf="collapsed; else alumnos"
         class="text-white cursor-pointer"
         fontIcon="home"
         >home</mat-icon
       >
-      <ng-template #inicio>
-        <a routerLink="/autogestion/inicio" class="text-white cursor-pointer"
-          >Inicio</a
-        >
-      </ng-template>
-    </div>
-    <div>
-      <mat-icon
-        (click)="irAInscripcion()"
-        *ngIf="collapsed; else inscripcion"
-        class="text-white cursor-pointer"
-        fontIcon="description"
-        >description</mat-icon
-      >
-      <ng-template #inscripcion>
-        <a
-          routerLink="/autogestion/inscripcion"
-          class="text-white cursor-pointer"
-          >Inscripcion</a
+      <ng-template #alumnos>
+        <a routerLink="/autogestion/alumnos" class="text-white cursor-pointer"
+          >Alumnos</a
         >
       </ng-template>
     </div>
@@ -51,27 +35,27 @@
         >find_in_page</mat-icon
       >
       <ng-template #cursos>
-        <span class="text-white cursor-pointer">Cursos</span>
+        <a routerLink="/autogestion/cursos" class="text-white cursor-pointer">Cursos</a>
       </ng-template>
     </div>
     <div>
       <mat-icon
-        (click)="irAAlumnos()"
-        *ngIf="collapsed; else alumnos"
+        (click)="irAInscripcion()"
+        *ngIf="collapsed; else inscripcion"
         class="text-white cursor-pointer"
-        fontIcon="accessibility"
-        >accessibility</mat-icon
+        fontIcon="assignment"
+        >assignment</mat-icon
       >
-      <ng-template #alumnos>
-        <a routerLink="/autogestion/alumnos" class="text-white cursor-pointer"
-          >Alumnos</a
+      <ng-template #inscripcion>
+        <a routerLink="/autogestion/inscripciones" class="text-white cursor-pointer"
+          >Inscripcion</a
         >
       </ng-template>
     </div>
 
     <div>
       <mat-icon
-      (click)="irAUsuarios()"
+        (click)="irAUsuarios()"
         *ngIf="collapsed && respuesta; else usuario"
         class="text-white cursor-pointer"
         fontIcon="assignment"

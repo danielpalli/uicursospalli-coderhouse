@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HeaderComponent } from './components/header/header.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MaterialModule } from './material/material.module';
 import { FlexModule } from '@angular/flex-layout';
 import { ErrorMsgDirective } from './directives/error-msg.directive';
@@ -13,8 +12,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent,
-    HeaderComponent,
+    ToolbarComponent,
     ErrorMsgDirective,
     ImagenPipe,
     NombreYApellidoPipe,
@@ -22,8 +20,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     SidenavComponent,
   ],
   exports: [
-    NavbarComponent,
-    HeaderComponent,
+    ToolbarComponent,
     SidenavComponent,
     AgrandarLetraDirective,
   ],
