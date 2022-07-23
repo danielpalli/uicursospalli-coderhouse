@@ -46,6 +46,7 @@ export class RegisterComponent implements OnInit {
       ],
     ],
     perfil: ['usuario'],
+    sexo: ['Masculino'],
     email: ['', [Validators.required, Validators.email]],
     confirmarEmail: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -67,6 +68,7 @@ export class RegisterComponent implements OnInit {
     );
   }
   registrarse() {
+    console.log(this.registroForm.value);
     if (this.registroForm.invalid) {
       this.registroForm.markAllAsTouched();
       return;
@@ -86,10 +88,10 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    const { nombre, apellido, direccion, telefono, perfil, email, password } =
+    const { nombre, apellido, direccion, telefono, perfil, sexo, email, password } =
       this.registroForm.value;
     this.authService
-      .registro(nombre, apellido, direccion, telefono, email, password)
+      .registro(nombre, apellido, direccion, telefono, perfil, sexo, email, password)
       .subscribe((ok) => {
         if (ok === true) {
           this.router.navigateByUrl('/auth/login');

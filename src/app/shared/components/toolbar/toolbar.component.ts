@@ -10,11 +10,13 @@ import { AuthService } from 'src/app/modules/auth/services/auth.service';
 export class ToolbarComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
   respuesta: boolean = false;
+
   ngOnInit(): void {
     if (this.authService.role === 'Admin') {
       this.respuesta = true;
     }
   }
+
   logout() {
     this.router.navigateByUrl('/auth/login');
     this.authService.logout();

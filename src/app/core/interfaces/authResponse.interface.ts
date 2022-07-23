@@ -6,6 +6,7 @@ export interface AuthResponse {
   direccion: string;
   telefono: string;
   perfil: string;
+  sexo: string;
   email: string;
   token: string;
 }

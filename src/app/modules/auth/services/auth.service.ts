@@ -50,11 +50,13 @@ export class AuthService {
     apellido: string,
     direccion: string,
     telefono: string,
+    perfil: string,
+    sexo: string,
     email: string,
     password: string
   ) {
     const url = `${this.baseUrl}/usuarios/crear`;
-    const body = { nombre, apellido, direccion, telefono, email, password };
+    const body = { nombre, apellido, direccion, telefono, perfil, sexo, email, password };
 
     return this.http.post<AuthResponse>(url, body).pipe(
       tap((resp) => {
@@ -67,6 +69,7 @@ export class AuthService {
             direccion: resp.direccion,
             telefono: resp.telefono,
             perfil: resp.perfil,
+            sexo: resp.sexo,
             email: resp.email,
           };
         }
@@ -91,6 +94,7 @@ export class AuthService {
             direccion: resp.direccion,
             telefono: resp.telefono,
             perfil: resp.perfil,
+            sexo: resp.sexo,
             email: resp.email,
           };
         }
