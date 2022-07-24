@@ -2,17 +2,12 @@
   <app-toolbar></app-toolbar>
 </div>
 
-<div class="flex  mx-auto">
+<div class="flex mx-auto">
+  <div>
+    <app-sidenav></app-sidenav>
+  </div>
 
-    <div>
-      <app-sidenav></app-sidenav>
-    </div>
-
-    <div class="w-full sm:flex-col mx-3" >
-
-      <div class="w-11/12 sm:w-full">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-
+  <div class="w-full sm:flex-col mx-3">
+    <router-outlet></router-outlet>
+  </div>
 </div>
