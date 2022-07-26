@@ -29,8 +29,12 @@ export class Listado implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.usuario = [];
   }
+  respuesta: boolean = false;
 
   ngOnInit(): void {
+    if (this.authService.role === 'Admin') {
+      this.respuesta = true;
+    }
     this.authService.obternerUsuarios().subscribe((usuarios: Usuario[]) => {
       usuarios = Object.values(usuarios[1]);
       this.usuario = usuarios;
@@ -41,10 +45,14 @@ export class Listado implements OnInit, OnDestroy {
     const dialogRef = this.dialog.open(EditarUsuarioComponent, {
       data: usuario,
     });
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.authService.actualizarUsuario(result).subscribe(() => {
-          Swal.fire('Actualizado!', `${result.nombre} ha sido actualizado`, 'success');
+          Swal.fire(
+            'Actualizado!',
+            `${result.nombre} ha sido actualizado`,
+            'success'
+          );
           this.authService
             .obternerUsuarios()
             .subscribe((usuarios: Usuario[]) => {
@@ -83,4 +91,15 @@ export class Listado implements OnInit, OnDestroy {
       }
     });
   }
+
+  buscarUsuario(usuario: Usuario) {
+
+    const id = usuario._id;
+    this.authService.buscarUsuario(id!.toString()).subscribe((usuario: Usuario) => {
+      console.log(usuario);
+      // usuarios = Object.values(usuarios);
+      // this.usuario = usuarios;
+    });
+  }
+
 }

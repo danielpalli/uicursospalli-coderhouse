@@ -23,6 +23,21 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  buscarUsuario(id: string): Observable<Usuario> {
+    const url = `${this.baseUrl}/usuarios/info/${id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.get<Usuario>(url, { headers }).pipe(
+      map((resp) => {
+        return resp;
+      }),
+      catchError((err) => of(err.error.msg))
+    );
+  }
+
   obtenerUsuario(): Observable<Usuario> {
     return this.http.get<Usuario>(`${this.baseUrl}/perfil`).pipe(
       tap((resp) => {
@@ -56,7 +71,16 @@ export class AuthService {
     password: string
   ) {
     const url = `${this.baseUrl}/usuarios/crear`;
-    const body = { nombre, apellido, direccion, telefono, perfil, sexo, email, password };
+    const body = {
+      nombre,
+      apellido,
+      direccion,
+      telefono,
+      perfil,
+      sexo,
+      email,
+      password,
+    };
 
     return this.http.post<AuthResponse>(url, body).pipe(
       tap((resp) => {
@@ -136,8 +160,7 @@ export class AuthService {
       localStorage.getItem('token') || ''
     );
 
-    return this.http.delete(url, { headers })
-
+    return this.http.delete(url, { headers });
   }
 
   actualizarUsuario(usuario: Usuario) {
@@ -158,5 +181,4 @@ export class AuthService {
   logout() {
     localStorage.clear();
   }
-
 }
