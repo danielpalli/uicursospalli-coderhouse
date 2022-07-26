@@ -12,6 +12,7 @@ import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.compone
 })
 export class Listado implements OnInit, OnDestroy {
   usuario!: Usuario[];
+  user!: Usuario;
 
   displayedColumns: string[] = [
     'id',
@@ -96,9 +97,9 @@ export class Listado implements OnInit, OnDestroy {
 
     const id = usuario._id;
     this.authService.buscarUsuario(id!.toString()).subscribe((usuario: Usuario) => {
-      console.log(usuario);
-      // usuarios = Object.values(usuarios);
-      // this.usuario = usuarios;
+
+      this.user = Object.values(usuario)[1];
+      console.log(this.user);
     });
   }
 
