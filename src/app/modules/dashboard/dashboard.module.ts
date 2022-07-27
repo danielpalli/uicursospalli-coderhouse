@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MateriaComponenteComponent } from './components/materia-componente/materia-componente.component';
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
+import { VerUsuarioComponent } from './components/ver-usuario/ver-usuario.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CursosComponent } from './pages/cursos/cursos.component';
     MateriaComponenteComponent,
     EditarUsuarioComponent,
     CursosComponent,
+    VerUsuarioComponent,
   ],
   imports: [
     CommonModule,

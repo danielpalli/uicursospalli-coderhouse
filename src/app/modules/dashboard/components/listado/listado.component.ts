@@ -4,6 +4,7 @@ import Usuario from 'src/app/core/interfaces/usuarios.interface';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import Swal from 'sweetalert2';
 import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.component';
+import { VerUsuarioComponent } from '../ver-usuario/ver-usuario.component';
 
 @Component({
   selector: 'app-listado',
@@ -24,6 +25,8 @@ export class Listado implements OnInit, OnDestroy {
     'email',
     'acciones',
   ];
+
+  displayedColumnsAlter: string[] = ['nombre', 'apellido', 'acciones'];
 
   constructor(private authService: AuthService, public dialog: MatDialog) {}
 
@@ -64,6 +67,7 @@ export class Listado implements OnInit, OnDestroy {
       }
     });
   }
+
   eliminarUsuario(usuario: Usuario) {
     if (usuario._id === this.authService.usuario._id) {
       Swal.fire('Error', 'No puedes eliminar tu propio usuario', 'error');
@@ -94,13 +98,33 @@ export class Listado implements OnInit, OnDestroy {
   }
 
   buscarUsuario(usuario: Usuario) {
-
     const id = usuario._id;
-    this.authService.buscarUsuario(id!.toString()).subscribe((usuario: Usuario) => {
+    this.authService
+      .buscarUsuario(id!.toString())
+      .subscribe((usuario: Usuario) => {
+        this.user = Object.values(usuario)[1];
+        const dialogRef = this.dialog.open(VerUsuarioComponent, {
+          data: this.user,
+        });
+        dialogRef.afterClosed().subscribe((result) => {
+          if (result) {
+            this.authService.actualizarUsuario(result).subscribe(() => {
+              Swal.fire(
+                'Actualizado!',
+                `${result.nombre} ha sido actualizado`,
+                'success'
+              );
+              this.authService
+                .obternerUsuarios()
+                .subscribe((usuarios: Usuario[]) => {
+                  usuarios = Object.values(usuarios[1]);
+                  this.usuario = usuarios;
+                });
+            });
+          }
+        }
+        );
 
-      this.user = Object.values(usuario)[1];
-      console.log(this.user);
-    });
+      });
   }
-
 }
