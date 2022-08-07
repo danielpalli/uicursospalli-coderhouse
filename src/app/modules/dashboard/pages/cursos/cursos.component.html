@@ -1,5 +1,11 @@
-<h1 dirAgrandarLetra lass="max-w-max mt-3">
-  Panel de Cursos
-</h1>
+<h1 dirAgrandarLetra lass="max-w-max mt-3">Panel de Cursos</h1>
+<div class="flex">
 
-<h3>Listado de cursos</h3>
+  <h3 class="pr-5">Listado de cursos</h3>
+
+  <button mat-raised-button color="primary" (click)="nuevoCurso()">Nuevo Curso</button>
+</div>
+
+<div class="w-full">
+  <app-listado-cursos></app-listado-cursos>
+</div>

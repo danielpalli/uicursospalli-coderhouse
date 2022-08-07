@@ -48,7 +48,7 @@ export class AuthService {
     );
   }
 
-  obternerUsuarios(): Observable<Usuario[]> {
+  obternerUsuarios(): Observable<any> {
     return this.http.get<Usuario[]>(`${this.baseUrl}/usuarios`).pipe(
       map((usuarios) => {
         return Object.values(usuarios);

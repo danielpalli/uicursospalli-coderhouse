@@ -1,7 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import Usuario from 'src/app/core/interfaces/usuarios.interface';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
+import { AppState } from 'src/app/store/app.reducers';
+import { cargarUsuarios } from 'src/app/store/usuariosStore/usuarios.actions';
 import Swal from 'sweetalert2';
 import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.component';
 import { VerUsuarioComponent } from '../ver-usuario/ver-usuario.component';
@@ -28,21 +31,28 @@ export class Listado implements OnInit, OnDestroy {
 
   displayedColumnsAlter: string[] = ['nombre', 'apellido', 'acciones'];
 
-  constructor(private authService: AuthService, public dialog: MatDialog) {}
+  constructor(
+    private authService: AuthService,
+    public dialog: MatDialog,
+    private store: Store<AppState>
+  ) {}
 
   ngOnDestroy(): void {
     this.usuario = [];
   }
+
   respuesta: boolean = false;
 
   ngOnInit(): void {
     if (this.authService.role === 'Admin') {
       this.respuesta = true;
     }
-    this.authService.obternerUsuarios().subscribe((usuarios: Usuario[]) => {
-      usuarios = Object.values(usuarios[1]);
-      this.usuario = usuarios;
+
+    this.store.select('usuarios').subscribe(({ users }) => {
+      this.usuario = users;
     });
+
+    this.store.dispatch(cargarUsuarios());
   }
 
   editarUsuario(usuario: Usuario) {
@@ -122,9 +132,7 @@ export class Listado implements OnInit, OnDestroy {
                 });
             });
           }
-        }
-        );
-
+        });
       });
   }
 }

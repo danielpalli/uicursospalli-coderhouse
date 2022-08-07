@@ -12,4 +12,7 @@ export class CursosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  nuevoCurso() {
+    console.log("asd")
+  }
 }

@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
+import { Store } from '@ngrx/store';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,7 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
   ) {}
 
   ngOnInit(): void {}
@@ -32,10 +35,12 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
     }
+
     const { email, password } = this.loginForm.value;
     this.authService.login(email, password).subscribe((ok) => {
       if (ok === true) {

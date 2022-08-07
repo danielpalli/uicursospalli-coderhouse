@@ -18,6 +18,8 @@ import { MateriaComponenteComponent } from './components/materia-componente/mate
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { VerUsuarioComponent } from './components/ver-usuario/ver-usuario.component';
+import { ListadoCursosComponent } from './components/listado-cursos/listado-cursos.component';
+import { FormularioNuevoCursoComponent } from './components/formulario-nuevo-curso/formulario-nuevo-curso.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { VerUsuarioComponent } from './components/ver-usuario/ver-usuario.compon
     EditarUsuarioComponent,
     CursosComponent,
     VerUsuarioComponent,
+    ListadoCursosComponent,
+    FormularioNuevoCursoComponent,
   ],
   imports: [
     CommonModule,
