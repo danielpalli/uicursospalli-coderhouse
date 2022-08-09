@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import Usuario from 'src/app/core/interfaces/usuarios.interface';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
@@ -7,7 +8,8 @@ import { AppState } from 'src/app/store/app.reducers';
 import { cargarUsuarios } from 'src/app/store/usuariosStore/usuarios.actions';
 import Swal from 'sweetalert2';
 import { EditarUsuarioComponent } from '../editar-usuario/editar-usuario.component';
-import { VerUsuarioComponent } from '../ver-usuario/ver-usuario.component';
+import { Subscription } from 'rxjs';
+// import { VerUsuarioComponent } from '../ver-usuario/ver-usuario.component';
 
 @Component({
   selector: 'app-listado',
@@ -16,8 +18,7 @@ import { VerUsuarioComponent } from '../ver-usuario/ver-usuario.component';
 })
 export class Listado implements OnInit, OnDestroy {
   usuario!: Usuario[];
-  user!: Usuario;
-
+  usuariosSubscription?: Subscription;
   displayedColumns: string[] = [
     'id',
     'nombre',
@@ -34,11 +35,13 @@ export class Listado implements OnInit, OnDestroy {
   constructor(
     private authService: AuthService,
     public dialog: MatDialog,
+    private router: Router,
     private store: Store<AppState>
   ) {}
 
   ngOnDestroy(): void {
     this.usuario = [];
+    this.usuariosSubscription?.unsubscribe();
   }
 
   respuesta: boolean = false;
@@ -48,7 +51,7 @@ export class Listado implements OnInit, OnDestroy {
       this.respuesta = true;
     }
 
-    this.store.select('usuarios').subscribe(({ users }) => {
+    this.usuariosSubscription = this.store.select('usuarios').subscribe(({ users }) => {
       this.usuario = users;
     });
 
@@ -108,31 +111,6 @@ export class Listado implements OnInit, OnDestroy {
   }
 
   buscarUsuario(usuario: Usuario) {
-    const id = usuario._id;
-    this.authService
-      .buscarUsuario(id!.toString())
-      .subscribe((usuario: Usuario) => {
-        this.user = Object.values(usuario)[1];
-        const dialogRef = this.dialog.open(VerUsuarioComponent, {
-          data: this.user,
-        });
-        dialogRef.afterClosed().subscribe((result) => {
-          if (result) {
-            this.authService.actualizarUsuario(result).subscribe(() => {
-              Swal.fire(
-                'Actualizado!',
-                `${result.nombre} ha sido actualizado`,
-                'success'
-              );
-              this.authService
-                .obternerUsuarios()
-                .subscribe((usuarios: Usuario[]) => {
-                  usuarios = Object.values(usuarios[1]);
-                  this.usuario = usuarios;
-                });
-            });
-          }
-        });
-      });
+    this.router.navigate([`/autogestion/info-usuario/${usuario._id}`]);
   }
 }

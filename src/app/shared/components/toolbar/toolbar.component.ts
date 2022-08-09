@@ -37,6 +37,12 @@ export class ToolbarComponent implements OnInit {
         if (this.titulo === 'usuarios') {
           this.titulo = 'Usuarios';
         }
+        if (this.titulo === 'info-usuario') {
+          this.titulo = 'Informacion del usuario';
+        }
+        if (this.titulo === 'editar-usuario') {
+          this.titulo = 'Editar usuario';
+        }
       }
     });
   }

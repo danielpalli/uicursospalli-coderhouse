@@ -1,5 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DashboardService } from '../../services/dashboard.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-materia-componente',
@@ -9,7 +8,7 @@ import { DashboardService } from '../../services/dashboard.service';
 export class MateriaComponenteComponent implements OnInit {
   preInscripcion: any[] = [];
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor() {}
 
   ngOnInit(): void {
     // this.preInscripcion = this.dashboardService.obtenerPreinscripcion() || [];

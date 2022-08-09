@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Materia from 'src/app/core/interfaces/materias.interface';
-import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-formulario-inscripcion',
@@ -22,7 +21,6 @@ export class FormularioInscripcion implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private dashboardService: DashboardService
   ) {}
 
   ngOnInit(): void {

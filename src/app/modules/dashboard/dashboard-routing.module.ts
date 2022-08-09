@@ -5,8 +5,10 @@ import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { InscripcionComponent } from './pages/inscripcion/inscripcion.component';
 import { MainComponent } from './pages/main/main.component';
+import { NuevoCursoComponent } from './pages/nuevo-curso/nuevo-curso.component';
 import { PaginaerrorComponent } from './pages/paginaerror/paginaerror.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { VerUsuarioComponent } from './pages/ver-usuario/ver-usuario.component';
 
 const routes: Routes = [
   {
@@ -29,6 +31,14 @@ const routes: Routes = [
         path: 'usuarios',
         component: UsuariosComponent,
         canActivate: [AdminGuard],
+      },
+      {
+        path: 'info-usuario/:id',
+        component: VerUsuarioComponent,
+      },
+      {
+        path: 'nuevo-curso',
+        component: NuevoCursoComponent,
       },
       {
         path: '404',

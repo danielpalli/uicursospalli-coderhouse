@@ -1,7 +1,5 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DashboardService } from '../../services/dashboard.service';
 
+import { Component, OnDestroy, OnInit } from '@angular/core';
 @Component({
   selector: 'app-inscripcion',
   templateUrl: './inscripcion.component.html',
@@ -9,9 +7,8 @@ import { DashboardService } from '../../services/dashboard.service';
 })
 export class InscripcionComponent implements OnInit, OnDestroy {
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor() { }
   ngOnDestroy(): void {
-      this.dashboardService.borrarTodo();
   }
   ngOnInit(): void {
   }
