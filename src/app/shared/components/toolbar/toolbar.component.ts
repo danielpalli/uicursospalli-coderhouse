@@ -40,8 +40,8 @@ export class ToolbarComponent implements OnInit {
         if (this.titulo === 'info-usuario') {
           this.titulo = 'Informacion del usuario';
         }
-        if (this.titulo === 'editar-usuario') {
-          this.titulo = 'Editar usuario';
+        if (this.titulo === 'nuevo-curso') {
+          this.titulo = 'Creación nuevo curso';
         }
       }
     });

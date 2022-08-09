@@ -27,7 +27,7 @@ export class ListadoCursosComponent implements OnInit, OnDestroy {
   constructor(private cursosService:CursosService, private store:Store<AppState>) {}
 
   ngOnInit(): void {
-    this. cursosSubscription = this.store.select('cursos').subscribe(({ cursos }) => {
+    this.cursosSubscription = this.store.select('cursos').subscribe(({ cursos }) => {
       this.cursos = cursos;
     });
 
