@@ -1,13 +1,113 @@
-<form class="bg-white py-10 px-5 rounded-lg ">
-  <div>
-    <label class="text-gray-700 uppercase font-bold text-sm " for="nombre">
-      Nombre Curso:
+<form
+  [formGroup]="formNuevoCurso"
+  (ngSubmit)="crearCurso()"
+  class="bg-white py-10 px-5 rounded-lg"
+>
+  <div class="mb-5">
+    <label class="text-gray-700 uppercase font-bold text-sm" for="nombre">
+      Nombre del curso:
     </label>
     <input
       id="nombre"
       type="text"
       class="border-2 rounded-md shadow-md w-full p-2 mt-2 placeholderbg-gray-400 focus:outline-none"
       placeholder="Nombre del curso"
-    >
+      formControlName="nombre"
+    />
   </div>
+  <div class="mb-5">
+    <label class="text-gray-700 uppercase font-bold text-sm" for="docente">
+      Docente:
+    </label>
+    <input
+      id="docente"
+      type="text"
+      class="border-2 rounded-md shadow-md w-full p-2 mt-2 placeholderbg-gray-400 focus:outline-none"
+      placeholder="Docente a cargo del curso"
+      formControlName="docente"
+    />
+  </div>
+  <div class="mb-5">
+    <label class="text-gray-700 uppercase font-bold text-sm" for="horario">
+      Horario:
+    </label>
+    <input
+      id="horario"
+      type="text"
+      class="border-2 rounded-md shadow-md w-full p-2 mt-2 placeholderbg-gray-400 focus:outline-none"
+      placeholder="Horario del curso"
+      formControlName="horario"
+    />
+  </div>
+  <div class="mb-5">
+    <label class="text-gray-700 uppercase font-bold text-sm" for="comision">
+      Comision del curso:
+    </label>
+    <input
+      id="comision"
+      type="text"
+      class="border-2 rounded-md shadow-md w-full p-2 mt-2 placeholderbg-gray-400 focus:outline-none"
+      placeholder="Comision del curso"
+      formControlName="comision"
+    />
+  </div>
+  <div class="mb-5">
+    <label class="text-gray-700 uppercase font-bold text-sm" for="cupo">
+      Capacidad del curso:
+    </label>
+    <input
+      id="cupo"
+      type="number"
+      class="border-2 rounded-md shadow-md w-full p-2 mt-2 placeholderbg-gray-400 focus:outline-none"
+      placeholder="Cupo de alumnos"
+      formControlName="cupo"
+    />
+  </div>
+  <div class="mb-5">
+    <label class="text-gray-700 uppercase font-bold text-sm" for="fechainicial">
+      Fecha de inicio:
+    </label>
+    <input
+      id="fechainicial"
+      type="date"
+      class="border-2 rounded-md shadow-md w-full p-2 mt-2 placeholderbg-gray-400 focus:outline-none"
+      formControlName="fechaInicio"
+    />
+  </div>
+  <div class="mb-5">
+    <label class="text-gray-700 uppercase font-bold text-sm" for="fechafinal">
+      Fecha de fin:
+    </label>
+    <input
+      id="fechafinal"
+      type="date"
+      class="border-2 rounded-md shadow-md w-full p-2 mt-2 placeholderbg-gray-400 focus:outline-none"
+      formControlName="fechaFin"
+    />
+  </div>
+  <div
+    class="from-red-400 to-red-600 bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-xs my-3"
+    *ngIf="campoNoValido('nombre')"
+  >
+    El nombre es obligatorio y tiene que ser valido
+  </div>
+  <div
+    class="from-red-400 to-red-600 bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-xs my-3"
+    *ngIf="campoNoValido('docente')"
+  >
+    El nombre del docente es obligatorio
+  </div>
+  <div
+    class="from-red-400 to-red-600 bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-xs my-3"
+    *ngIf="campoNoValido('horario')"
+  >
+    El horario es obligatorio
+  </div>
+  <div
+    class="from-red-400 to-red-600 bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-xs my-3"
+    *ngIf="campoNoValido('comision')"
+  >
+    El numero de comision es obligatorio
+  </div>
+  <button class="w-full" mat-raised-button color="primary">Crear curso</button>
 </form>

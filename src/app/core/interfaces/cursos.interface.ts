@@ -9,6 +9,6 @@ export default interface Curso {
   fechaFin?: Date;
   cupo?: number;
   estado?: boolean;
-  docente?: Usuario;
+  docente?: string;
   alumnos: Usuario[];
 }

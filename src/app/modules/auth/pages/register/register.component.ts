@@ -67,8 +67,8 @@ export class RegisterComponent implements OnInit {
       this.registroForm.controls[campo].touched
     );
   }
+
   registrarse() {
-    console.log(this.registroForm.value);
     if (this.registroForm.invalid) {
       this.registroForm.markAllAsTouched();
       return;

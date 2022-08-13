@@ -28,6 +28,72 @@ export class CursosService {
       ),
       catchError((err) => of(err.error.msg))
     );
-
   }
+
+  crearCurso(curso: Curso): Observable<any> {
+    const url = `${this.baseUrl}/cursos`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.post(url, curso, { headers }).pipe(
+      map((curso) => {
+        return curso;
+      }
+      ),
+      catchError((err) => of(err.error.msg))
+    );
+  }
+
+  borrarCurso(id: string): Observable<any> {
+    const url = `${this.baseUrl}/cursos/${id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.delete(url, { headers }).pipe(
+      map((curso) => {
+        return curso;
+      }
+      ),
+      catchError((err) => of(err.error.msg))
+    );
+  }
+
+  actualizarCurso(curso: Curso): Observable<any> {
+    const url = `${this.baseUrl}/cursos/${curso._id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.put(url, curso, { headers }).pipe(
+      map((curso) => {
+        return curso;
+      }
+      ),
+      catchError((err) => of(err.error.msg))
+    );
+  }
+
+  obtenerCurso(id: string): Observable<any> {
+    const url = `${this.baseUrl}/cursos/${id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.get(url, { headers }).pipe(
+      map((curso) => {
+        return curso;
+      }
+      ),
+      catchError((err) => of(err.error.msg))
+    );
+  }
+
+
+
 }
