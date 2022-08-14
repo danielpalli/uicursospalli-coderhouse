@@ -8,6 +8,7 @@ import { MainComponent } from './pages/main/main.component';
 import { NuevoCursoComponent } from './pages/nuevo-curso/nuevo-curso.component';
 import { PaginaerrorComponent } from './pages/paginaerror/paginaerror.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { VerCursoComponent } from './pages/ver-curso/ver-curso.component';
 import { VerUsuarioComponent } from './pages/ver-usuario/ver-usuario.component';
 
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path: 'info-usuario/:id',
         component: VerUsuarioComponent,
+      },
+      {
+        path: 'info-curso/:id',
+        component: VerCursoComponent,
       },
       {
         path: 'nuevo-curso',

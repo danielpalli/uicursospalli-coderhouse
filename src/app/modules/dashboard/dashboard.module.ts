@@ -21,6 +21,7 @@ import { ListadoCursosComponent } from './components/listado-cursos/listado-curs
 import { FormularioNuevoCursoComponent } from './components/formulario-nuevo-curso/formulario-nuevo-curso.component';
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 import { NuevoCursoComponent } from './pages/nuevo-curso/nuevo-curso.component';
+import { VerCursoComponent } from './pages/ver-curso/ver-curso.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NuevoCursoComponent } from './pages/nuevo-curso/nuevo-curso.component';
     ListadoCursosComponent,
     FormularioNuevoCursoComponent,
     EditarUsuarioComponent,
-    NuevoCursoComponent
+    NuevoCursoComponent,
+    VerCursoComponent
   ],
   imports: [
     CommonModule,

@@ -5,14 +5,19 @@ import { ValidarTokenGuard } from './core/guards/validar-token.guard';
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule),
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'autogestion',
-    loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
     canActivate: [ValidarTokenGuard],
     canLoad: [ValidarTokenGuard],
   },
+
   {
     path: '**',
     redirectTo: 'auth',
@@ -20,9 +25,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{
-    useHash: false
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      useHash: false,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

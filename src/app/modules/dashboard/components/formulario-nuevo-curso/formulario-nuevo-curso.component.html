@@ -109,5 +109,23 @@
   >
     El numero de comision es obligatorio
   </div>
+  <div
+    class="from-red-400 to-red-600 bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-xs my-3"
+    *ngIf="campoNoValido('fechaInicio')"
+  >
+    La fecha de inicio es obligatorio
+  </div>
+  <div
+    class="from-red-400 to-red-600 bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-xs my-3"
+    *ngIf="campoNoValido('fechaFin')"
+  >
+    La fecha final es obligatorio
+  </div>
+  <div
+    class="from-red-400 to-red-600 bg-gradient-to-br text-center p-3 rounded-xl uppercase text-white font-bold text-xs my-3"
+    *ngIf="campoNoValido('cupo')"
+  >
+    El cupo de alumnos es obligatorio
+  </div>
   <button class="w-full" mat-raised-button color="primary">Crear curso</button>
 </form>

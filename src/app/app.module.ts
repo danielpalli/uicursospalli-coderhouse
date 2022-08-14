@@ -13,8 +13,6 @@ import { environment } from 'src/environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { EffectsArray } from './store/app.effects';
 
-
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -29,7 +27,6 @@ import { EffectsArray } from './store/app.effects';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
-
   ],
   providers: [],
   bootstrap: [AppComponent],

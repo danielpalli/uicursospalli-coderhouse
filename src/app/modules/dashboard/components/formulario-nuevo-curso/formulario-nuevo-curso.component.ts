@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Usuario from 'src/app/core/interfaces/usuarios.interface';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
+import Swal from 'sweetalert2';
 import { CursosService } from '../../services/cursos.service';
 
 @Component({
@@ -36,7 +38,8 @@ export class FormularioNuevoCursoComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private cursoService: CursosService
+    private cursoService: CursosService,
+    private router:Router
   ) {
     this.user = this.authService.usuario;
   }
@@ -62,7 +65,8 @@ export class FormularioNuevoCursoComponent implements OnInit {
 
     const curso = this.formNuevoCurso.value;
     this.cursoService.crearCurso(curso).subscribe((resp) => {
-      console.log(resp);
+      Swal.fire('Curso creado', 'El curso se creó correctamente', 'success');
+      this.router.navigate(['/autogestion/cursos']);
     });
   }
 }
