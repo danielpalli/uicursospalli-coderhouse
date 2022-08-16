@@ -12,6 +12,7 @@ import { AuthService } from '../../services/auth.service';
 export class RegisterComponent implements OnInit {
   btnColour = '#a54f4f';
 
+
   registroForm: FormGroup = this.fb.group({
     nombre: [
       '',
@@ -45,13 +46,14 @@ export class RegisterComponent implements OnInit {
         Validators.pattern('^[0-9]+$'),
       ],
     ],
-    perfil: ['usuario'],
-    sexo: ['Masculino'],
+    perfil: ['alumno'],
+    sexo: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     confirmarEmail: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     confirmarPassword: ['', [Validators.required, Validators.minLength(6)]],
   });
+
 
   constructor(
     private fb: FormBuilder,

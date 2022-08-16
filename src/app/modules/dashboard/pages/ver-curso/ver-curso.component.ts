@@ -20,7 +20,7 @@ export class VerCursoComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.cursoSubscription = this.store
       .select('curso')
-      .subscribe(({ curso }) => {
+      .subscribe(({curso} ) => {
         this.curso = curso;
       });
 

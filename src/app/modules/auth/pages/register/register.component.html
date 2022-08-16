@@ -13,7 +13,7 @@
         />
         <mat-error *ngIf="validarCampo('nombre')"
           >El nombre es muy corto</mat-error
-          >
+        >
       </mat-form-field>
       <mat-form-field>
         <input
@@ -23,8 +23,8 @@
           formControlName="apellido"
         />
         <mat-error *ngIf="validarCampo('apellido')"
-            >El apellido es muy corto</mat-error
-            >
+          >El apellido es muy corto</mat-error
+        >
       </mat-form-field>
     </div>
     <mat-form-field>
@@ -45,9 +45,9 @@
         type="tel"
         formControlName="telefono"
       />
-      <mat-error *ngIf="validarCampo('email')"
+      <mat-error *ngIf="validarCampo('telefono')"
         >Ingrese un numero valido</mat-error
-        >
+      >
     </mat-form-field>
     <div fxLayout="50px" fxLayoutGap="20">
       <mat-form-field>
@@ -59,7 +59,7 @@
         />
         <mat-error *ngIf="validarCampo('email')"
           >Ingrese un mail valido</mat-error
-      >
+        >
       </mat-form-field>
       <mat-form-field>
         <input
@@ -79,7 +79,7 @@
           formControlName="password"
         />
         <mat-error *ngIf="validarCampo('password')"
-        >La contraseña tiene que tener al menos 6 caracteres</mat-error
+          >La contraseña tiene que tener al menos 6 caracteres</mat-error
         >
       </mat-form-field>
       <mat-form-field>

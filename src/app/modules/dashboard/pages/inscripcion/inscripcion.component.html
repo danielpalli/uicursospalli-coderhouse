@@ -1,37 +1,9 @@
 <h1 dirAgrandarLetra lass="max-w-max mt-3">
-  Formuario de inscripcion a materias
+  Inscripcion a materias
 </h1>
 
 <div class="flex md:flex-col sm:flex-col">
   <div class="w-2/5 mr-3 mdUp:w-full sm:w-full">
-    <app-formulario-inscripcion></app-formulario-inscripcion>
-  </div>
-
-  <div class="w-3/5 sm:w-full">
-    <h3>Información de la Preinscripción</h3>
-
-    <ul class="mt-2">
-      <li>
-        Si tu Inscripción fue
-        <span class="text-green-600">ACEPTADA</span> podrás ver la inscripcion
-        en <span class="text-gray-600">ALUMNOS</span>
-        correspondiente con sus horarios.
-      </li>
-      <li>
-        Si tu Inscripción fue
-        <span class="text-red-600">RECHAZADA</span> podrás ver las
-        preinscripcion de la materia que causo el rechazo. Para volver a
-        inscribirte debes seguir el procedimiento publicado en
-        <span class="text-gray-600">NOTICIAS</span>.
-      </li>
-      <li>
-        Para que la preinscripcion este aceptada debe estar en verde y todas las
-        materias <span class="text-green-600">ACEPTADAS</span>
-      </li>
-    </ul>
+    <app-listado-inscripcion></app-listado-inscripcion>
   </div>
 </div>
-
-<h3>Materias a inscribir:</h3>
-
-<app-materia-componente></app-materia-componente>

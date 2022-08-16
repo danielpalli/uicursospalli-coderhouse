@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-cursos',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent implements OnInit {
 
-  constructor() { }
+  respuesta: boolean = false;
+
+  constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
+    if (this.authService.role === 'Admin') {
+      this.respuesta = true;
+    }
   }
 
 }

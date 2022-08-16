@@ -10,7 +10,14 @@
     <mat-card-content>
       <h3><u>Datos del curso:</u></h3>
       <div>
-datos
+        <p>Curso: {{ curso?.nombre }}</p>
+        <p>Comision: {{ curso?.comision }}</p>
+        <p>Horario: {{ curso?.horario }}</p>
+        <p>Docente: {{ curso?.docente }}</p>
+        <p>Cupo: {{ curso?.cupo }}</p>
+        <p>Estado: {{ curso?.estado }}</p>
+        <p>Fecha de inicio: {{ curso?.fechaInicio }}</p>
+        <p>Fecha de fin: {{ curso?.fechaFin }}</p>
       </div>
       <h3><u>Alumnos inscriptos:</u></h3>
     </mat-card-content>

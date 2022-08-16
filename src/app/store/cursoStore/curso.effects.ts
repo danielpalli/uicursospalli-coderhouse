@@ -4,7 +4,6 @@ import { of } from 'rxjs';
 import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 import { CursosService } from 'src/app/modules/dashboard/services/cursos.service';
 
-
 import * as cursoActions from './curso.actions';
 
 @Injectable()
@@ -17,8 +16,7 @@ export class CursoEffects {
       mergeMap((action) =>
         this.cursoService.obtenerCurso(action.id).pipe(
           map(
-            (curso) =>
-              cursoActions.cargarCursoSuccess({ curso: curso }),
+            (curso) => cursoActions.cargarCursoSuccess({ curso: curso.curso }),
             catchError((error) =>
               of(cursoActions.cargarCursoError({ payload: error }))
             )
@@ -28,5 +26,3 @@ export class CursoEffects {
     )
   );
 }
-
-

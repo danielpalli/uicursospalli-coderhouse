@@ -15,25 +15,46 @@ export class FormularioNuevoCursoComponent implements OnInit {
   user?: Usuario;
   formNuevoCurso: FormGroup = this.fb.group({
     nombre: [
-      '',
+      'asdsad',
       [
         Validators.required,
         Validators.minLength(3),
         Validators.pattern('[a-zA-Z ]*'),
       ],
     ],
-    horario: ['', [Validators.required]],
+    horario: ['wafsfaf', [Validators.required]],
     comision: [
-      '',
+      '2211',
       [Validators.required, Validators.minLength(4), Validators.maxLength(6)],
     ],
-    fechaInicio: ['', [Validators.required]],
-    fechaFin: ['', [Validators.required]],
-    cupo: ['', [Validators.required, Validators.min(1), Validators.max(50)]],
+    fechaInicio: [Date.now(), [Validators.required]],
+    fechaFin: [Date.now(), [Validators.required]],
+    cupo: ['3', [Validators.required, Validators.min(1), Validators.max(50)]],
     estado: [true],
-    docente: ['', [Validators.required]],
+    docente: ['asdasd', [Validators.required]],
     alumnos: [[]],
   });
+  // formNuevoCurso: FormGroup = this.fb.group({
+  //   nombre: [
+  //     '',
+  //     [
+  //       Validators.required,
+  //       Validators.minLength(3),
+  //       Validators.pattern('[a-zA-Z ]*'),
+  //     ],
+  //   ],
+  //   horario: ['', [Validators.required]],
+  //   comision: [
+  //     '',
+  //     [Validators.required, Validators.minLength(4), Validators.maxLength(6)],
+  //   ],
+  //   fechaInicio: ['', [Validators.required]],
+  //   fechaFin: ['', [Validators.required]],
+  //   cupo: ['', [Validators.required, Validators.min(1), Validators.max(50)]],
+  //   estado: [true],
+  //   docente: ['', [Validators.required]],
+  //   alumnos: [[]],
+  // });
 
   constructor(
     private fb: FormBuilder,

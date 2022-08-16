@@ -14,7 +14,6 @@ import { InscripcionComponent } from './pages/inscripcion/inscripcion.component'
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MateriaComponenteComponent } from './components/materia-componente/materia-componente.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { VerUsuarioComponent } from './pages/ver-usuario/ver-usuario.component';
 import { ListadoCursosComponent } from './components/listado-cursos/listado-cursos.component';
@@ -22,6 +21,8 @@ import { FormularioNuevoCursoComponent } from './components/formulario-nuevo-cur
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 import { NuevoCursoComponent } from './pages/nuevo-curso/nuevo-curso.component';
 import { VerCursoComponent } from './pages/ver-curso/ver-curso.component';
+import { EditarCursoComponent } from './components/editar-curso/editar-curso.component';
+import { ListadoInscripcionComponent } from './components/listado-inscripcion/listado-inscripcion.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +33,15 @@ import { VerCursoComponent } from './pages/ver-curso/ver-curso.component';
     InscripcionComponent,
     AlumnosComponent,
     UsuariosComponent,
-    MateriaComponenteComponent,
     CursosComponent,
     VerUsuarioComponent,
     ListadoCursosComponent,
     FormularioNuevoCursoComponent,
     EditarUsuarioComponent,
     NuevoCursoComponent,
-    VerCursoComponent
+    VerCursoComponent,
+    EditarCursoComponent,
+    ListadoInscripcionComponent
   ],
   imports: [
     CommonModule,
