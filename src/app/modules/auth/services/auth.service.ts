@@ -54,8 +54,7 @@ export class AuthService {
         return Object.values(usuarios);
       }),
       catchError((error) => {
-        console.error(error);
-        return of([]);
+        return of(error.error.msg);
       })
     );
   }

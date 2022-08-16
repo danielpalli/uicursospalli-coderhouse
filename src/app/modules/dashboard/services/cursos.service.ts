@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import Curso from 'src/app/core/interfaces/cursos.interface';
+import Usuario from 'src/app/core/interfaces/usuarios.interface';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -24,8 +25,7 @@ export class CursosService {
     return this.http.get<Curso[]>(url, { headers }).pipe(
       map((cursos) => {
         return cursos;
-      }
-      ),
+      }),
       catchError((err) => of(err.error.msg))
     );
   }
@@ -40,8 +40,7 @@ export class CursosService {
     return this.http.post(url, curso, { headers }).pipe(
       map((curso) => {
         return curso;
-      }
-      ),
+      }),
       catchError((err) => of(err.error.msg))
     );
   }
@@ -56,8 +55,7 @@ export class CursosService {
     return this.http.delete(url, { headers }).pipe(
       map((curso) => {
         return curso;
-      }
-      ),
+      }),
       catchError((err) => of(err.error.msg))
     );
   }
@@ -72,8 +70,7 @@ export class CursosService {
     return this.http.put(url, curso, { headers }).pipe(
       map((curso) => {
         return curso;
-      }
-      ),
+      }),
       catchError((err) => of(err.error.msg))
     );
   }
@@ -88,12 +85,23 @@ export class CursosService {
     return this.http.get(url, { headers }).pipe(
       map((curso) => {
         return curso;
-      }
-      ),
+      }),
       catchError((err) => of(err.error.msg))
     );
   }
 
+  inscribirse(usuario: Usuario, curso: Curso): Observable<any> {
+    const url = `${this.baseUrl}/cursos/agregar-alumno/${usuario._id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
 
-
+    return this.http.put(url, curso, { headers }).pipe(
+      map((curso) => {
+        return curso;
+      }),
+      catchError((err) => of(err.error.msg))
+    );
+  }
 }
