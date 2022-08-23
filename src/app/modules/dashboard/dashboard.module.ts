@@ -23,6 +23,7 @@ import { NuevoCursoComponent } from './pages/nuevo-curso/nuevo-curso.component';
 import { VerCursoComponent } from './pages/ver-curso/ver-curso.component';
 import { EditarCursoComponent } from './components/editar-curso/editar-curso.component';
 import { ListadoInscripcionComponent } from './components/listado-inscripcion/listado-inscripcion.component';
+import { AgregarAlumnoComponent } from './pages/agregar-alumno/agregar-alumno.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ListadoInscripcionComponent } from './components/listado-inscripcion/li
     NuevoCursoComponent,
     VerCursoComponent,
     EditarCursoComponent,
-    ListadoInscripcionComponent
+    ListadoInscripcionComponent,
+    AgregarAlumnoComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,45 @@
+<h1 class="text-4xl font-black">Añadir alumno al curso: {{ curso?.nombre }}</h1>
+<div class="mt-10 flex justify-center">
+  <form
+    [formGroup]="formAgregarAlumno"
+    (ngSubmit)="buscarAlumno()"
+    class="bg-white py-10 px-5 w-1/2 rounded-lg shadow"
+  >
+    <div class="mb-5">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+        Email alumno
+      </label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Ingrese el email del alumno"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        formControlName="email"
+      />
+    </div>
+
+    <div class="flex items-center justify-center">
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="submit"
+      >
+        Buscar Alumno
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="flex justify-center mt-10">
+  <div class="bg-white py-10 px-5 w-1/2 rounded-lg shadow">
+    <h2 class="text-center mb-10 text-2xl font-bold">Resultado:</h2>
+    <div *ngIf="encontro" class="flex justify-between items-center">
+      <p>{{ alumno?.nombre }}</p>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        (click)="agregarAlumno(formAgregarAlumno.value)"
+      >
+        Agregar al curso
+      </button>
+    </div>
+  </div>
+</div>

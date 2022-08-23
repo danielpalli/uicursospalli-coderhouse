@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from 'src/app/core/guards/admin-guard.guard';
+import { AgregarAlumnoComponent } from './pages/agregar-alumno/agregar-alumno.component';
 import { AlumnosComponent } from './pages/alumnos/alumnos.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { InscripcionComponent } from './pages/inscripcion/inscripcion.component';
@@ -44,6 +45,10 @@ const routes: Routes = [
       {
         path: 'nuevo-curso',
         component: NuevoCursoComponent,
+      },
+      {
+        path: 'agregar-alumno/:id',
+        component: AgregarAlumnoComponent,
       },
       {
         path: '404',

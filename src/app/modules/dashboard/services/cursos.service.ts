@@ -90,16 +90,47 @@ export class CursosService {
     );
   }
 
-  inscribirse(usuario: Usuario, curso: Curso): Observable<any> {
-    const url = `${this.baseUrl}/cursos/agregar-alumno/${usuario._id}`;
+  buscarAlumno(email: string) {
+    const url = `${this.baseUrl}/cursos/buscar-alumnos`;
     const headers = new HttpHeaders().set(
       'x-token',
       localStorage.getItem('token') || ''
     );
 
-    return this.http.put(url, curso, { headers }).pipe(
-      map((curso) => {
-        return curso;
+    return this.http.post(url, { email }, { headers }).pipe(
+      map((alumno) => {
+        return alumno;
+      }),
+
+      catchError((err) => of(err.error.msg))
+    );
+  }
+
+  agregarAlumno(email: string, id: string) {
+    const url = `${this.baseUrl}/cursos/agregar-alumno/${id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.post(url, { email }, { headers }).pipe(
+      map((alumno) => {
+        return alumno;
+      }),
+      catchError((err) => of(err.error.msg))
+    );
+  }
+
+  eliminarAlumno(idUser: string, id: string) {
+    const url = `${this.baseUrl}/cursos/remover-alumno/${id}`;
+    const headers = new HttpHeaders().set(
+      'x-token',
+      localStorage.getItem('token') || ''
+    );
+      console.log(idUser);
+    return this.http.post(url, { idUser }, { headers }).pipe(
+      map((alumno) => {
+        return alumno;
       }),
       catchError((err) => of(err.error.msg))
     );

@@ -54,18 +54,7 @@ export class ListadoInscripcionComponent implements OnInit, OnDestroy {
     this.cursosSubscription?.unsubscribe();
   }
 
-  inscribirse(curso: Curso) {
-    const user: Usuario = this.authService.usuario;
-
-    this.cursosService.inscribirse(user, curso).subscribe((respuesta) => {
-      if (respuesta) {
-        Swal.fire({
-          title: 'Inscripción exitosa',
-          text: 'Te has inscrito al curso',
-          icon: 'success',
-        });
-        this.router.navigate(['/autogestion/cursos']);
-      }
-    });
+  agregarAlumno(id: string) {
+    this.router.navigate(['/autogestion/agregar-alumno', id]);
   }
 }
