@@ -25,6 +25,7 @@ import { EditarCursoComponent } from './components/editar-curso/editar-curso.com
 import { ListadoInscripcionComponent } from './components/listado-inscripcion/listado-inscripcion.component';
 import { AgregarAlumnoComponent } from './pages/agregar-alumno/agregar-alumno.component';
 
+
 @NgModule({
   declarations: [
     PaginaerrorComponent,
@@ -52,7 +53,7 @@ import { AgregarAlumnoComponent } from './pages/agregar-alumno/agregar-alumno.co
     MaterialModule,
     SharedModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ]
 })
 export class DashboardModule { }

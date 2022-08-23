@@ -9,3 +9,4 @@ export const EffectsArray: any[] = [
   CursosEffects,
   CursoEffects,
 ];
+

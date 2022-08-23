@@ -16,3 +16,4 @@ export const appReducers: ActionReducerMap<AppState> = {
   cursos: cursosReducers.cursosReducer,
   curso: cursoReducers.cursoReducer,
 };
+

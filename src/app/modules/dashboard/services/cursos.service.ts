@@ -127,7 +127,6 @@ export class CursosService {
       'x-token',
       localStorage.getItem('token') || ''
     );
-      console.log(idUser);
     return this.http.post(url, { idUser }, { headers }).pipe(
       map((alumno) => {
         return alumno;

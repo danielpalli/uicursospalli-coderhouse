@@ -8,4 +8,5 @@ export default interface Usuario {
   sexo?: string;
   email?: string;
   token?: string;
+  inscripciones?: any[];
 }

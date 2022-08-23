@@ -31,7 +31,6 @@ export class VerCursoComponent implements OnInit, OnDestroy {
       .select('curso')
       .subscribe(({ curso }) => {
         this.curso = curso;
-
         this.alumno = curso?.alumnos.map((alumno) => {
           return alumno;
         });
