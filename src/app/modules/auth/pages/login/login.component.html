@@ -1,13 +1,12 @@
-<div class="contenido">
-  <h1>Inicio de sesión</h1>
-  <mat-divider></mat-divider>
+<h1 class="animate__animated animate__flipInX animate__slow">
+  Inicio de sesión
+</h1>
+<mat-divider></mat-divider>
 
-  <form [formGroup]="loginForm" (ngSubmit)="login()">
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="flex flex-col w-72 mt-1 animate__animated animate__flipInX">
     <mat-form-field>
       <input matInput placeholder="Email" type="text" formControlName="email" />
-      <mat-error *ngIf="validarCampo('email')"
-        >Ingrese un mail valido</mat-error
-      >
     </mat-form-field>
     <mat-form-field>
       <input
@@ -16,24 +15,20 @@
         type="password"
         formControlName="password"
       />
-      <mat-error *ngIf="validarCampo('password')"
-        >La contraseña tiene que tener al menos 6 caracteres</mat-error
-      >
     </mat-form-field>
-
-    <div fxLayout fxLayoutAlign="center">
-      <button
-        mat-raised-button
-        [style.background-color]="btnColour"
-        type="submit"
-      >
-        {{ "Iniciar Sesión" | uppercase }}
-      </button>
-    </div>
-  </form>
-
-  <mat-divider></mat-divider>
-  <div class="text-content" fxLayout="column">
-    <span>¿Primera vez? <a routerLink="/auth/registro">Registrarse</a></span>
   </div>
+
+  <div class="flex justify-center mb-2 animate__animated animate__flipInX animate__slow">
+    <button
+      class="text-white bg-cyan-900 p-3 rounded-md hover:bg-cyan-800 transition-colors duration-700"
+      type="submit"
+    >
+      {{ "Iniciar Sesión" | uppercase }}
+    </button>
+  </div>
+</form>
+
+<mat-divider></mat-divider>
+<div class="mt-1">
+  <span>¿Primera vez? <a routerLink="/auth/registro">Registrarse</a></span>
 </div>

@@ -5,7 +5,6 @@ import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
 import { Store } from '@ngrx/store';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,24 +21,38 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {}
 
-  validarCampo(campo: string) {
-    return (
-      this.loginForm.controls[campo].errors &&
-      this.loginForm.controls[campo].touched
-    );
+  validarCampos(): boolean {
+    if (
+      this.loginForm.value.email === '' ||
+      this.loginForm.value.password === ''
+    ) {
+      Swal.fire('Error', 'Todos los campos son obligatorios', 'error');
+      return false;
+    }
+
+    if (this.loginForm.controls.email.errors) {
+      Swal.fire('Error', 'El email no es valido', 'error');
+      return false;
+    }
+
+    if (this.loginForm.controls.password.errors) {
+      Swal.fire(
+        'Error',
+        'La contraseña debe tener minimo 6 caracteres',
+        'error'
+      );
+      return false;
+    }
+    return true;
   }
 
   login() {
-
-    if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched();
-      return;
-    }
+    if (!this.validarCampos()) return;
 
     const { email, password } = this.loginForm.value;
     this.authService.login(email, password).subscribe((ok) => {

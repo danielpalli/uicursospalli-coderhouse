@@ -9,6 +9,7 @@ import { NombreYApellidoPipe } from './pipes/nombre-yapellido.pipe';
 import { AgrandarLetraDirective } from './directives/agrandar-letra.directive';
 import { DashboardRoutingModule } from '../modules/dashboard/dashboard-routing.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     NombreYApellidoPipe,
     AgrandarLetraDirective,
     SidenavComponent,
+    SpinnerComponent,
   ],
   exports: [
     ToolbarComponent,
