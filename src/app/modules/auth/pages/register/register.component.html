@@ -1,9 +1,9 @@
-<div class="contenido">
-  <h1>Registro</h1>
-  <mat-divider></mat-divider>
+<h1 class="animate__animated animate__flipInX animate__slow">Registro</h1>
+<mat-divider></mat-divider>
 
-  <form [formGroup]="registroForm" (ngSubmit)="registrarse()">
-    <div fxLayout="50px" fxLayoutGap="20">
+<form [formGroup]="registroForm" (ngSubmit)="registrarse()">
+  <div class="flex flex-row mt-1">
+    <div class="w-1/2 mx-1">
       <mat-form-field>
         <input
           matInput
@@ -11,10 +11,9 @@
           type="text"
           formControlName="nombre"
         />
-        <mat-error *ngIf="validarCampo('nombre')"
-          >El nombre es muy corto</mat-error
-        >
       </mat-form-field>
+    </div>
+    <div class="w-1/2">
       <mat-form-field>
         <input
           matInput
@@ -22,34 +21,33 @@
           type="text"
           formControlName="apellido"
         />
-        <mat-error *ngIf="validarCampo('apellido')"
-          >El apellido es muy corto</mat-error
-        >
       </mat-form-field>
     </div>
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Dirección"
-        type="text"
-        formControlName="direccion"
-      />
-      <mat-error *ngIf="validarCampo('direccion')"
-        >Ingrese una dirección valida</mat-error
-      >
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Telefono"
-        type="tel"
-        formControlName="telefono"
-      />
-      <mat-error *ngIf="validarCampo('telefono')"
-        >Ingrese un numero valido</mat-error
-      >
-    </mat-form-field>
-    <div fxLayout="50px" fxLayoutGap="20">
+  </div>
+  <div class="flex flex-row mt-1">
+    <div class="w-1/2">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Dirección"
+          type="text"
+          formControlName="direccion"
+        />
+      </mat-form-field>
+    </div>
+    <div class="w-1/2">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Telefono"
+          type="tel"
+          formControlName="telefono"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="flex flex-row mt-1">
+    <div class="w-1/2">
       <mat-form-field>
         <input
           matInput
@@ -57,10 +55,9 @@
           type="text"
           formControlName="email"
         />
-        <mat-error *ngIf="validarCampo('email')"
-          >Ingrese un mail valido</mat-error
-        >
       </mat-form-field>
+    </div>
+    <div class="w-1/2">
       <mat-form-field>
         <input
           matInput
@@ -70,7 +67,9 @@
         />
       </mat-form-field>
     </div>
-    <div fxLayout="50px" fxLayoutGap="20">
+  </div>
+  <div class="flex flex-row mt-1">
+    <div class="w-1/2">
       <mat-form-field>
         <input
           matInput
@@ -78,10 +77,9 @@
           type="password"
           formControlName="password"
         />
-        <mat-error *ngIf="validarCampo('password')"
-          >La contraseña tiene que tener al menos 6 caracteres</mat-error
-        >
       </mat-form-field>
+    </div>
+    <div class="w-1/2">
       <mat-form-field>
         <input
           matInput
@@ -91,22 +89,23 @@
         />
       </mat-form-field>
     </div>
-    <div fxLayout fxLayoutAlign="center">
-      <button
-        mat-raised-button
-        [style.background-color]="btnColour"
-        type="submit"
-      >
-        {{ "Registrarse" | uppercase }}
-      </button>
-    </div>
-  </form>
-
-  <mat-divider></mat-divider>
-  <div class="text-content" fxLayout="column">
-    <span
-      >¿Ya tienes una cuenta?
-      <a routerLink="/auth/login">Inicie sesión</a></span
-    >
   </div>
+
+  <div
+    class="flex justify-center mb-2 animate__animated animate__flipInX animate__slow"
+  >
+    <button
+      class="text-white bg-cyan-900 p-3 rounded-md hover:bg-cyan-800 transition-colors duration-700"
+      type="submit"
+    >
+      {{ "Registrarse" | uppercase }}
+    </button>
+  </div>
+</form>
+
+<mat-divider></mat-divider>
+<div class="mt-1">
+  <span
+    >¿Ya tienes una cuenta? <a routerLink="/auth/login">Inicie sesión</a></span
+  >
 </div>
