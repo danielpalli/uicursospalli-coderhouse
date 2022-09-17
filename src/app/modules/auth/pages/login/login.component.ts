@@ -63,4 +63,8 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  registrarse() {
+    //agregar
+  }
 }
