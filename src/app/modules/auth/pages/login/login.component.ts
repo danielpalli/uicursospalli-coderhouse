@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
-import { Store } from '@ngrx/store';
+// import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  btnColour = '#a54f4f';
+  // btnColour = '#a54f4f';
 
   loginForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       this.loginForm.value.email === '' ||
       this.loginForm.value.password === ''
     ) {
-      Swal.fire('Error', 'Todos los campos son obligatorios', 'error');
+      Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
       return false;
     }
 
@@ -53,15 +53,15 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (!this.validarCampos()) return;
-
-    const { email, password } = this.loginForm.value;
-    this.authService.login(email, password).subscribe((ok) => {
-      if (ok === true) {
-        this.router.navigateByUrl('/autogestion/alumnos');
-      } else {
-        Swal.fire('Error', ok, 'error');
-      }
-    });
+    console.log(this.loginForm.value);
+    // const { email, password } = this.loginForm.value;
+    // this.authService.login(email, password).subscribe((ok) => {
+    //   if (ok === true) {
+        // this.router.navigateByUrl('/autogestion/alumnos');
+      // } else {
+      //   Swal.fire('Error', ok, 'error');
+      // }
+    // });
   }
 
 }
