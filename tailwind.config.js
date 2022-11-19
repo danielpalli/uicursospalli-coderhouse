@@ -3,10 +3,10 @@ module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
     screens: {
-      'sm': {'min': '320px', 'max': '767px'},
+      'sm': {'min': '280px', 'max': '605px'},
       // => @media (min-width: 640px and max-width: 767px) { ... }
 
-      'md': {'min': '768px', 'max': '1023px'},
+      'md': {'min': '606px', 'max': '1023px'},
       // => @media (min-width: 768px and max-width: 1023px) { ... }
 
       'lg': {'min': '1024px', 'max': '1279px'},
@@ -17,9 +17,7 @@ module.exports = {
 
       '2xl': {'min': '1536px'},
       // => @media (min-width: 1536px) { ... }
-      'smUp': {'max': '200px'},
-      // => @media (min-width: 1536px) { ... }
-      'mdUp': {'min': '767px'},
+      'mdUp': {'min': '768px'},
       // => @media (min-width: 1536px) { ... }
     },
     extend: {},

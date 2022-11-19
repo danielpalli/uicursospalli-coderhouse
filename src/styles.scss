@@ -7,4 +7,11 @@
   padding: 0px;
   margin: 0px;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(190, 190, 190); }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inhrit;
+}
