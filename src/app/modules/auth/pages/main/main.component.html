@@ -1,6 +1,22 @@
-<div class="flex flex-col items-center justify-center h-screen w-screen animate__animated animate__zoomIn ">
-    <p class="font-bold text-white text-4xl">Sistema de inscripcion a cursos</p>
-    <div class="bg-zinc-200 rounded-lg shadow-white shadow-sm px-10 p-3">
-      <router-outlet></router-outlet>
+<div
+  class="flex sm:flex-col items-center justify-center h-screen w-screen animate__animated animate__zoomIn p-5 sm:p-0"
+>
+  <div
+    class="w-6/12 sm:w-full md:w-1/2 sm:mr-0 animate__animated animate__fadeIn"
+  >
+    <div class="sm:w-full flex items-center justify-center">
+      <img
+        class="object-fill sm:h-56 sm:w-[430x]"
+        src="../../../../../assets/images/elearning.png"
+        alt="example"
+      />
     </div>
+  </div>
+
+  <div class="w-4/12 sm:w-full md:w-1/2 ml-5 sm:ml-0">
+    <div [@routing]="prepareRoute(outlet)">
+
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </div>
 </div>
