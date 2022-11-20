@@ -10,7 +10,6 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  btnColour = '#a54f4f';
 
   registroForm: FormGroup = this.fb.group({
     nombre: [
@@ -121,33 +120,33 @@ export class RegisterComponent implements OnInit {
   registrarse() {
     if (!this.validarCampos()) return;
 
-    const {
-      nombre,
-      apellido,
-      direccion,
-      telefono,
-      perfil,
-      sexo,
-      email,
-      password,
-    } = this.registroForm.value;
-    this.authService
-      .registro(
-        nombre,
-        apellido,
-        direccion,
-        telefono,
-        perfil,
-        sexo,
-        email,
-        password
-      )
-      .subscribe((ok) => {
-        if (ok === true) {
-          this.router.navigateByUrl('/auth/login');
-        } else {
-          Swal.fire('Error', ok, 'error');
-        }
-      });
+  //   const {
+  //     nombre,
+  //     apellido,
+  //     direccion,
+  //     telefono,
+  //     perfil,
+  //     sexo,
+  //     email,
+  //     password,
+  //   } = this.registroForm.value;
+  //   this.authService
+  //     .registro(
+  //       nombre,
+  //       apellido,
+  //       direccion,
+  //       telefono,
+  //       perfil,
+  //       sexo,
+  //       email,
+  //       password
+  //     )
+  //     .subscribe((ok) => {
+  //       if (ok === true) {
+  //         this.router.navigateByUrl('/auth/login');
+  //       } else {
+  //         Swal.fire('Error', ok, 'error');
+  //       }
+  //     });
   }
 }
