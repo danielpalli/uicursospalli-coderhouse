@@ -51,6 +51,8 @@ export class LoginComponent implements OnInit {
     return true;
   }
 
+
+
   login() {
     if (!this.validarCampos()) return;
     console.log(this.loginForm.value);
