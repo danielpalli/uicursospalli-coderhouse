@@ -12,14 +12,17 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent,
+        data: { animation: 'login' },
       },
       {
         path: 'registro',
         component: RegisterComponent,
+        data: { animation: 'registro' },
       },
       {
         path: '**',
         redirectTo: 'login',
+        data: { animation: 'login' },
       },
     ],
   },

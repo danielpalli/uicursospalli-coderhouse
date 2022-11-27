@@ -9,6 +9,7 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -20,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AuthRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
 })
 export class AuthModule {}
