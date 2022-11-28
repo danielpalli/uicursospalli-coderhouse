@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ValidarTokenGuard } from './core/guards/validar-token.guard';
+// import { ValidarTokenGuard } from './core/guards/validar-token.guard';
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
       import('./modules/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
-    canActivate: [ValidarTokenGuard],
-    canLoad: [ValidarTokenGuard],
+    // canActivate: [ValidarTokenGuard],
+    // canLoad: [ValidarTokenGuard],
   },
 
   {

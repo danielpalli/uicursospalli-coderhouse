@@ -21,6 +21,7 @@ import { EffectsArray } from './store/app.effects';
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(EffectsArray),
     StoreDevtoolsModule.instrument({
