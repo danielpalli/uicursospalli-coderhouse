@@ -53,12 +53,12 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    if (!this.validarCampos()) return;
+    // if (!this.validarCampos()) return;
     console.log(this.loginForm.value);
     // const { email, password } = this.loginForm.value;
     // this.authService.login(email, password).subscribe((ok) => {
     //   if (ok === true) {
-        // this.router.navigateByUrl('/autogestion/alumnos');
+        this.router.navigateByUrl('/autogestion/inicio');
       // } else {
       //   Swal.fire('Error', ok, 'error');
       // }
