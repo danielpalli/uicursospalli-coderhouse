@@ -1,35 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { MainComponent } from './pages/main/main.component';
-import { RegisterComponent } from './pages/register/register.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent,
+    component: MainLayoutComponent,
     children: [
       {
         path: 'login',
-        component: LoginComponent,
-        data: { animation: 'login' },
-      },
-      {
-        path: 'registro',
-        component: RegisterComponent,
-        data: { animation: 'registro' },
+        component: LoginPageComponent,
       },
       {
         path: '**',
         redirectTo: 'login',
-        data: { animation: 'login' },
-      },
-    ],
-  },
+      }
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AuthRoutingModule {}
+export class AuthRoutingModule { }
