@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/autenticacion",
+    "/autenticacion/ingresar",
+    "/autenticacion/registro",
+    "/universidad"
+  ]
+}
