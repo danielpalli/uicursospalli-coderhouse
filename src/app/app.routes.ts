@@ -1,23 +1,36 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'auth',
-    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule),
+    path: 'autenticacion',
+    loadComponent: () => import('./features/auth/auth.component'),
+    children: [
+      {
+        path: 'ingresar',
+        title: 'Iniciar Sesion',
+        loadComponent: () =>
+          import('./features/auth/pages/login-page/login-page.component'),
+      },
+      {
+        path: 'registro',
+        title: 'Registro',
+        loadComponent: () =>
+          import('./features/auth/pages/register-page/register-page.component'),
+      },
+      {
+        path: '**',
+        redirectTo: 'ingresar',
+        pathMatch: 'full',
+      },
+    ],
   },
   {
-    path: '',
-    loadChildren: () => import('./modules/ui/ui.module').then(m => m.UiModule),
+    path: 'universidad',
+    loadComponent: () => import('./features/ui/ui.component'),
   },
   {
     path: '**',
-    redirectTo: 'auth',
-  }
+    pathMatch: 'full',
+    redirectTo: 'autenticacion',
+  },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AooRoute { }

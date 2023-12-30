@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-main-layout',
+  selector: 'app-ui',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.css'
+  templateUrl: './ui.component.html',
+  styleUrl: './ui.component.css'
 })
-export class MainLayoutComponent {
+export default class UiComponent {
 
 }

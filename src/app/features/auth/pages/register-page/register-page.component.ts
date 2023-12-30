@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css'
+  templateUrl: './register-page.component.html',
+  styleUrl: './register-page.component.css'
 })
-export class MainPageComponent {
+export default class RegisterPageComponent {
 
 }
