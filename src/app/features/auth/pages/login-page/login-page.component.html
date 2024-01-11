@@ -10,7 +10,7 @@
   </div>
 
   <div class="flex flex-col w-full md:w-1/2 md:mx-auto space-y-5 justify-center items-center">
-    <form action="" (ngSubmit)="signIn()" class="w-3/4">
+    <form (ngSubmit)="signIn()" class="w-3/4" [formGroup]="loginForm">
       <div class="flex flex-col justify-center px-4 md:px-0">
         <div class="space-y-10">
           <div class="text-center">
@@ -26,7 +26,7 @@
               <input
                 type="email"
                 name="email"
-                id="email"
+                formControlName="email"
                 class="border-b border-b-lack outline-none font-light py-1 px-2 w-full block"
               />
             </div>
@@ -35,7 +35,7 @@
               <input
                 type="password"
                 name="password"
-                id="password"
+                formControlName="password"
                 class="border-b border-b-lack outline-none font-light py-1 px-2 w-full block"
               />
             </div>
@@ -61,7 +61,7 @@
       </div>
       <div class="text-xs">
         <span class="text-gray-500">¿Olvidaste tu contraseña? </span>
-        <button routerLink="/autenticacion/registro" class="text-gray-800">
+        <button routerLink="/autenticacion/recuperarpassword" class="text-gray-800">
           Recuperar
         </button>
       </div>

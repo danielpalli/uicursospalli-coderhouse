@@ -18,6 +18,12 @@ export const routes: Routes = [
           import('./features/auth/pages/register-page/register-page.component'),
       },
       {
+        path: 'recuperarpassword',
+        title: 'Recuperar Password',
+        loadComponent: () =>
+          import('./features/auth/pages/forgot-password-page/forgot-password-page.component'),
+      },
+      {
         path: '**',
         redirectTo: 'ingresar',
         pathMatch: 'full',
@@ -27,6 +33,27 @@ export const routes: Routes = [
   {
     path: 'universidad',
     loadComponent: () => import('./features/ui/ui.component'),
+    children: [
+      {
+        path: 'inicio',
+        title: 'Noticias',
+        loadComponent: () =>
+          import('./features/ui/pages/main-page/main-page.component'),
+      },
+      {
+        path: 'preinscripcion',
+        title: 'Pre-inscripcion',
+        loadComponent: () =>
+          import(
+            './features/ui/pages/course-enrollment-page/course-enrollment-page.component'
+          ),
+      },
+      {
+        path: '**',
+        redirectTo: 'inicio',
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: '**',

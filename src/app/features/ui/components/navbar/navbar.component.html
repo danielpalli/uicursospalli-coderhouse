@@ -1,0 +1,36 @@
+<div class="grid grid-cols-6 justify-between px-10 mx-auto">
+  <div class="place-self-start">
+    <h1 class="text-4xl font-bold">Cursos Online</h1>
+  </div>
+  <div class="place-self-center col-span-4">
+    <nav class="">
+      <ul class="flex gap-2 text-sm">
+        <li>
+          <button
+            [routerLink]="['/universidad/inicio']"
+            routerLinkActive=""
+            class=""
+          >
+            Inicio
+          </button>
+        </li>
+        <li>
+          <button
+            [routerLink]="['/universidad/preinscripcion']"
+            routerLinkActive=""
+            class=""
+          >
+            Inscripcion a cursos
+          </button>
+        </li>
+        <li><a>Mis cursos</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="place-self-end">
+    <div class="flex gap-2">
+      <button>Desconectarse</button>
+      <img src="" alt="perfil" />
+    </div>
+  </div>
+</div>
