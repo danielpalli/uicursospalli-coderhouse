@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "admincursos-palli": {
+    "uicursospalli-coderhouse": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/admincursos-palli",
+            "outputPath": "dist/uicursospalli-coderhouse",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "admincursos-palli:build:production"
+              "buildTarget": "uicursospalli-coderhouse:build:production"
             },
             "development": {
-              "buildTarget": "admincursos-palli:build:development"
+              "buildTarget": "uicursospalli-coderhouse:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "admincursos-palli:build"
+            "buildTarget": "uicursospalli-coderhouse:build"
           }
         },
         "test": {
