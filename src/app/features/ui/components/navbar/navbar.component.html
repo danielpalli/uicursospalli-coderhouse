@@ -23,13 +23,25 @@
             Inscripcion a cursos
           </button>
         </li>
-        <li><a>Mis cursos</a></li>
+        <li>
+          <button
+            [routerLink]="['/universidad/cursos']"
+            routerLinkActive=""
+            class=""
+          >
+            Mis cursos
+          </button>
+        </li>
       </ul>
     </nav>
   </div>
-  <div class="place-self-end">
-    <div class="flex gap-2">
-      <button>Desconectarse</button>
+  <div class="place-self-end p-2">
+    <div class="flex gap-2 text-sm items-center">
+      <button
+        class="bg-red-500 text-white px-2 py-1 rounded-md"
+        [routerLink]="['/autenticacion/ingresar']"
+        routerLinkActive=""
+      >Desconectarse</button>
       <img src="" alt="perfil" />
     </div>
   </div>

@@ -49,6 +49,18 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'cursos',
+        title: 'Cursos',
+        loadComponent: () =>
+          import('./features/ui/pages/my-courses-page/my-courses-page.component'),
+      },
+      {
+        path: 'cursos/:id',
+        title: 'Cursos',
+        loadComponent: () =>
+          import('./features/ui/pages/course-page/course-page.component'),
+      },
+      {
         path: '**',
         redirectTo: 'inicio',
         pathMatch: 'full',
